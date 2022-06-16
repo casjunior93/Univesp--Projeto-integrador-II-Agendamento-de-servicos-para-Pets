@@ -60,27 +60,34 @@
 
                 <form class="" action="<?= base_url('login/salvar'); ?>" method="POST">
                     <?= csrf_field(); ?>
+                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>
+                    <?php endif ?>
+
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class='alert alert-success'><?= session()->getFlashdata('success'); ?></div>
+                    <?php endif ?>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Nome/Razão Social</label>
-                            <input type="text" id="inputName" name="nome" class="form-control" required>
+                            <input type="text" id="inputName" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
                             <span class="text-danger"><?= isset($validation) ? display_error($validation, 'nome') : '' ?></span>
                         </div>
 
 
                         <div class="form-group">
                             <label for="inputAddress">Cep</label>
-                            <input type="text" class="form-control" id="inputAddressCep" name="cep" required>
+                            <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" required>
                             <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cep') : '' ?></span>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Rua/ Avenida </label>
-                            <input type="text" class="form-control" id="inputAddressRua" name="rua" required>
+                            <input type="text" class="form-control" id="inputAddressRua" name="rua" value="<?= set_value('rua'); ?>" required>
                             <span class="text-danger"><?= isset($validation) ? display_error($validation, 'rua') : '' ?></span>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputCity">Cidade</label>
-                                    <input type="text" class="form-control" id="inputCity" name="cidade" required>
+                                    <input type="text" class="form-control" id="inputCity" name="cidade" value="<?= set_value('cidade'); ?>" required>
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cidade') : '' ?></span>
                                 </div>
 
@@ -122,22 +129,22 @@
 
                             <div class="form-group">
                                 <label for="inputAddress2">Complemento</label>
-                                <input type="text" class="form-control" id="inputAddress2" name="complemento">
+                                <input type="text" class="form-control" id="inputAddress2" name="complemento" value="<?= set_value('complemento'); ?>">
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'complemento') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputSurname">Nome do responsável pela clínica</label>
-                                <input type="text" class="form-control" id="inputSurname" name="responsavel" required>
+                                <input type="text" class="form-control" id="inputSurname" name="responsavel" value="<?= set_value('responsavel'); ?>" required>
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'responsavel') : '' ?></span>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputZip">Telefone (whatsapp)</label>
-                                <input type="text" class="form-control" id="inputZip" name="telefone" required>
+                                <input type="text" class="form-control" id="inputZip" name="telefone" value="<?= set_value('telefone'); ?>" required>
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'telefone') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" name="email" required>
+                                <input type="email" value="<?= set_value('email'); ?>" class="form-control" id="inputEmail4" name="email" required>
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">

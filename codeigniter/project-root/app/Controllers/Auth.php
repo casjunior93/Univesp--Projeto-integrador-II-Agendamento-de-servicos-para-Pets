@@ -39,7 +39,39 @@ class Auth extends BaseController
     if (!$validation) {
       return view('auth/cadastre-se', ['validation' => $this->validator]);
     } else {
-      echo 'Form validado com sucesso';
+      #echo 'Form validado com sucesso';
+      //registrando no banco de dados
+      $nome = $this->request->getPost('nome');
+      $email = $this->request->getPost('email');
+      $senha = $this->request->getPost('senha');
+      $cep = $this->request->getPost('cep');
+      $rua = $this->request->getPost('rua');
+      $cidade = $this->request->getPost('cidade');
+      $estado = $this->request->getPost('estado');
+      $complemento = $this->request->getPost('complemento');
+      $responsavel = $this->request->getPost('responsavel');
+      $telefone = $this->request->getPost('telefone');
+
+      $values = [
+        'nome' => $nome,
+        'email' => $email,
+        'senha' => $senha,
+        'cep' => $cep,
+        'rua' => $rua,
+        'cidade' => $cidade,
+        'estado' => $estado,
+        'complemento' => $complemento,
+        'responsavel' => $responsavel,
+        'telefone' => $telefone
+      ];
+
+      $userModel = new \App\Models\UserModel();
+      $query = $userModel->insert($values);
+      if (!$query) {
+        return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
+      } else {
+        return redirect()->to('cadastre-se')->with('success', 'Registrado com sucesso');
+      }
     }
   }
 }
