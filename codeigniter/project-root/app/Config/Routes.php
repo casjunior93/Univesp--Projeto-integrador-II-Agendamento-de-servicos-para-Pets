@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 #$routes->get('/', 'Auth::registro');
 $routes->get('entre-cadastre-se', 'Auth::index');
 $routes->post('login/salvar', 'Auth::salvar');
+$routes->post('login/logar', 'Auth::logar');
 $routes->get('cadastre-se', 'Auth::registro');
 
 

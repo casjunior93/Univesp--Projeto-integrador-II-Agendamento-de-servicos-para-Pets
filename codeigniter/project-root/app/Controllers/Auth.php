@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Hash;
+
 class Auth extends BaseController
 {
   public function __construct()
@@ -55,7 +57,7 @@ class Auth extends BaseController
       $values = [
         'nome' => $nome,
         'email' => $email,
-        'senha' => $senha,
+        'senha' => Hash::make($senha),
         'cep' => $cep,
         'rua' => $rua,
         'cidade' => $cidade,
@@ -72,6 +74,21 @@ class Auth extends BaseController
       } else {
         return redirect()->to('cadastre-se')->with('success', 'Registrado com sucesso');
       }
+    }
+  }
+
+  function logar()
+  {
+    //validando campos do formulario
+    $validation = $this->validate([
+      'email' => 'required|valid_email|is_not_unique[usuarios.email]',
+      'senha' => 'required|min_length[5]|max_length[12]',
+    ]);
+
+    if (!$validation) {
+      return view('auth/entre-cadastre-se', ['validation' => $this->validator]);
+    } else {
+      echo 'Oi';
     }
   }
 }

@@ -16,12 +16,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link href="css/modal.css" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="js/bootstrap.js"></script>
+    <link href="<?= base_url('/'); ?>/css/modal.css" />
+    <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
+    <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
 
 
 </head>
@@ -30,7 +30,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -56,15 +56,18 @@
                     <div class='col-md-3'></div>
                     <div class="col-md-6">
                         <div class="login-box well">
-                            <form action="">
+                            <form action="<?= base_url('login/logar'); ?>" method="POST">
+                                <?= csrf_field(); ?>
                                 <legend>Entrar</legend>
                                 <div class="form-group">
                                     <label for="username-email">Email</label>
-                                    <input value='' id="username-email" placeholder="E-mail or Username" type="text" class="form-control" />
+                                    <input value='' id="username-email" placeholder="E-mail or Username" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
+                                    <span class=" text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Senha</label>
-                                    <input id="password" value='' placeholder="Password" type="text" class="form-control" />
+                                    <input id="password" value='' placeholder="Password" type="text" class="form-control" name="senha" />
+                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
                                 </div>
                                 <div class="input-group">
                                     <div class="checkbox">
