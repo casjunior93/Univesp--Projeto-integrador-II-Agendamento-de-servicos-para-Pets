@@ -16,12 +16,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link href="css/modal.css" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="js/bootstrap.js"></script>
+    <link href="<?= base_url('/'); ?>/css/modal.css" />
+    <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
+    <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
 
 
 </head>
@@ -30,7 +30,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -63,26 +63,30 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Nome/Razão Social</label>
-                            <input type="text" id="inputName" class="form-control" required>
+                            <input type="text" id="inputName" name="nome" class="form-control" required>
+                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'nome') : '' ?></span>
                         </div>
 
 
                         <div class="form-group">
                             <label for="inputAddress">Cep</label>
-                            <input type="text" class="form-control" id="inputAddress" required>
+                            <input type="text" class="form-control" id="inputAddressCep" name="cep" required>
+                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cep') : '' ?></span>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Rua/ Avenida </label>
-                            <input type="text" class="form-control" id="inputAddress" required>
+                            <input type="text" class="form-control" id="inputAddressRua" name="rua" required>
+                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'rua') : '' ?></span>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputCity">Cidade</label>
-                                    <input type="text" class="form-control" id="inputCity" required>
+                                    <input type="text" class="form-control" id="inputCity" name="cidade" required>
+                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cidade') : '' ?></span>
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="inputState">Estado</label>
-                                    <select id="inputState" class="form-control" required>
+                                    <select id="inputState" name="estado" class="form-control" required>
                                         <option selected hidden>Escolha...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
@@ -112,32 +116,39 @@
                                         <option value="SE">Sergipe</option>
                                         <option value="TO">Tocantins</option>
                                     </select>
+                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'estado') : '' ?></span>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputAddress2">Complemento</label>
-                                <input type="text" class="form-control" id="inputAddress2">
+                                <input type="text" class="form-control" id="inputAddress2" name="complemento">
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'complemento') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputSurname">Nome do responsável pela clínica</label>
-                                <input type="text" class="form-control" id="inputSurname" required>
+                                <input type="text" class="form-control" id="inputSurname" name="responsavel" required>
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'responsavel') : '' ?></span>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputZip">Telefone (whatsapp)</label>
-                                <input type="text" class="form-control" id="inputZip" required>
+                                <input type="text" class="form-control" id="inputZip" name="telefone" required>
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'telefone') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" required>
+                                <input type="email" class="form-control" id="inputEmail4" name="email" required>
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Senha</label>
-                                <input type="password" class="form-control" id="inputPassword4" required>
+                                <input type="password" class="form-control" id="inputPassword4" name="senha" required>
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Repetir senha</label>
-                                <input type="password" class="form-control" id="inputPassword4" required>
+                                <input type="password" class="form-control" id="inputPassword4" name="senha2" required>
+                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha2') : '' ?></span>
                             </div>
                         </div>
 
