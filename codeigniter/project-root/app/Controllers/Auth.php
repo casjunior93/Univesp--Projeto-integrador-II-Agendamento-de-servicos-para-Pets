@@ -6,12 +6,12 @@ class Auth extends BaseController
 {
   public function index()
   {
-    return view('auth/login');
+    return view('entre-cadastre-se');
   }
 
   public function registro()
   {
-    return view('auth/registro');
+    return view('cadastre-se');
   }
 
   public function salvar()
