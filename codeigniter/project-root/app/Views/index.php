@@ -314,6 +314,7 @@
         </div>
     </section>
     <!-- Clients-->
+<!--
     <div class="py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -332,6 +333,7 @@
             </div>
         </div>
     </div>
+-->
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container">
