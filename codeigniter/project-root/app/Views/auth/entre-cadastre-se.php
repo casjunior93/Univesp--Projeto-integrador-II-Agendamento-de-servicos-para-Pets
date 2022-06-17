@@ -68,12 +68,12 @@
                                 <legend>Entrar</legend>
                                 <div class="form-group">
                                     <label for="username-email">Email</label>
-                                    <input value='' id="username-email" placeholder="E-mail or Username" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
+                                    <input value='' id="username-email" placeholder="E-mail" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
                                     <span class=" text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Senha</label>
-                                    <input id="password" value='' placeholder="Password" type="password" class="form-control" name="senha" />
+                                    <input id="password" value='' placeholder="Senha" type="password" class="form-control" name="senha" />
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
                                 </div>
                                 <div class="input-group">
