@@ -8,7 +8,7 @@ class Auth extends BaseController
 {
   public function __construct()
   {
-    helper(['url', 'form']);
+    helper(['form']);
   }
 
   public function index()
