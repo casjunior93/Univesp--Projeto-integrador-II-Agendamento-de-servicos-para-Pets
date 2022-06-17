@@ -88,7 +88,23 @@ class Auth extends BaseController
     if (!$validation) {
       return view('auth/entre-cadastre-se', ['validation' => $this->validator]);
     } else {
-      echo 'Oi';
+      //Buscando o usuário
+
+      $email = $this->request->getPost('email');
+      $senha = $this->request->getPost('senha');
+      $userModel = new \App\Models\UserModel();
+      $usuario_info = $userModel->where('email', $email)->first();
+      $check_senha = Hash::check($senha, $usuario_info['senha']);
+
+      if (!$check_senha) {
+        session()->setFlashdata('fail', 'Senha incorreta');
+        return redirect()->to('entre-cadastre-se')->withInput();
+      } else {
+        $user_id = $usuario_info['id'];
+        session()->set('loggedUser', $user_id);
+        #return redirect()->to('/dashboard');
+        echo 'Olá, ' . $usuario_info['nome'];
+      }
     }
   }
 }
