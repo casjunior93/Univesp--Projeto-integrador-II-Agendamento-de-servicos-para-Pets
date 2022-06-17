@@ -72,7 +72,7 @@ class Auth extends BaseController
       if (!$query) {
         return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
       } else {
-        return redirect()->to('cadastre-se')->with('success', 'Registrado com sucesso');
+        return redirect()->to('entre-cadastre-se')->with('success', 'Registrado com sucesso! Faça login com suas credenciais.');
       }
     }
   }

@@ -58,6 +58,13 @@
                         <div class="login-box well">
                             <form action="<?= base_url('login/logar'); ?>" method="POST">
                                 <?= csrf_field(); ?>
+                                <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                                    <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>
+                                <?php endif ?>
+
+                                <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                                    <div class='alert alert-success'><?= session()->getFlashdata('success'); ?></div>
+                                <?php endif ?>
                                 <legend>Entrar</legend>
                                 <div class="form-group">
                                     <label for="username-email">Email</label>
