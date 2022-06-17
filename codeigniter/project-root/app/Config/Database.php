@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'hostname' => '34.138.118.139',
+        'username' => 'dev_user_petvet',
+        'password' => 'Senha.dev.0',
+        'database' => 'dev_petvet',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
