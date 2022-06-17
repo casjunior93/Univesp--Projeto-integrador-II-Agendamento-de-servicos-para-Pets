@@ -33,7 +33,6 @@ class Auth extends BaseController
       'rua' => 'required',
       'cidade' => 'required',
       'estado' => 'required',
-      'complemento' => 'required',
       'responsavel' => 'required',
       'telefone' => 'required'
     ]);
