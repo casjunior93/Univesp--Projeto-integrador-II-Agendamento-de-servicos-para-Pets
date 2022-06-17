@@ -71,24 +71,24 @@
                         <div class="form-group col-md-6">
                             <label for="inputName">Nome/Razão Social</label>
                             <input type="text" id="inputName" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'nome') : '' ?></span>
+                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'nome') : '' ?></span>
                         </div>
 
 
                         <div class="form-group">
                             <label for="inputAddress">Cep</label>
                             <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cep') : '' ?></span>
+                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'cep') : '' ?></span>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Rua/ Avenida </label>
                             <input type="text" class="form-control" id="inputAddressRua" name="rua" value="<?= set_value('rua'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'rua') : '' ?></span>
+                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'rua') : '' ?></span>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputCity">Cidade</label>
                                     <input type="text" class="form-control" id="inputCity" name="cidade" value="<?= set_value('cidade'); ?>" required>
-                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cidade') : '' ?></span>
+                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'cidade') : '' ?></span>
                                 </div>
 
                                 <div class="form-group col-md-4">
@@ -123,39 +123,39 @@
                                         <option value="SE">Sergipe</option>
                                         <option value="TO">Tocantins</option>
                                     </select>
-                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'estado') : '' ?></span>
+                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'estado') : '' ?></span>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputAddress2">Complemento</label>
                                 <input type="text" class="form-control" id="inputAddress2" name="complemento" value="<?= set_value('complemento'); ?>">
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'complemento') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'complemento') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputSurname">Nome do responsável pela clínica</label>
                                 <input type="text" class="form-control" id="inputSurname" name="responsavel" value="<?= set_value('responsavel'); ?>" required>
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'responsavel') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'responsavel') : '' ?></span>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputZip">Telefone (whatsapp)</label>
                                 <input type="text" class="form-control" id="inputZip" name="telefone" value="<?= set_value('telefone'); ?>" required>
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'telefone') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'telefone') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
                                 <input type="email" value="<?= set_value('email'); ?>" class="form-control" id="inputEmail4" name="email" required>
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'email') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Senha</label>
                                 <input type="password" class="form-control" id="inputPassword4" name="senha" required>
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Repetir senha</label>
                                 <input type="password" class="form-control" id="inputPassword4" name="senha2" required>
-                                <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha2') : '' ?></span>
+                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha2') : '' ?></span>
                             </div>
                         </div>
 
