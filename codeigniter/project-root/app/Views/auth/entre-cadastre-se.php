@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Senha</label>
-                                    <input id="password" value='' placeholder="Password" type="text" class="form-control" name="senha" />
+                                    <input id="password" value='' placeholder="Password" type="password" class="form-control" name="senha" />
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
                                 </div>
                                 <div class="input-group">
