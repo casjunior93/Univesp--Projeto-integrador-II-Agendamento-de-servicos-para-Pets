@@ -1,4 +1,5 @@
 <?php
+
 function mostra_erro($validation, $field)
 {
   if ($validation->hasError($field)) {
