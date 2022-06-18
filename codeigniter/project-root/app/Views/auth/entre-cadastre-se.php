@@ -69,12 +69,24 @@
                                 <div class="form-group">
                                     <label for="username-email">Email</label>
                                     <input value='' id="username-email" placeholder="E-mail" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
-                                    <span class=" text-danger"><?= isset($validation) ? mostra_erro($validation, 'email') : '' ?></span>
+                                    <?php
+                                    if (isset($validation)) {
+                                        echo '<div class="alert alert-danger">';
+                                        echo mostra_erro($validation, 'email');
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Senha</label>
                                     <input id="password" value='' placeholder="Senha" type="password" class="form-control" name="senha" />
-                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha') : '' ?></span>
+                                    <?php
+                                    if (isset($validation)) {
+                                        echo '<div class="alert alert-danger">';
+                                        echo mostra_erro($validation, 'senha');
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
                                 <div class="input-group">
                                     <div class="checkbox">
@@ -84,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Login" />
+                                    <input type="submit" class="btn btn-warning" value="Login" />
                                 </div>
                                 <span class='text-center'><a href="/resetting/request" class="text-sm">Esqueci minha senha</a></span>
                                 <div class="form-group">

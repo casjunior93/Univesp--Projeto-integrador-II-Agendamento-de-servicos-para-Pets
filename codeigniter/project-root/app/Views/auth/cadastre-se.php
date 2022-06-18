@@ -69,30 +69,54 @@
                     <?php endif ?>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputName">Nome/Razão Social</label>
+                            <label for="inputName">Nome/Razão Social<span class="text-danger">*</span></label>
                             <input type="text" id="inputName" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'nome') : '' ?></span>
+                            <?php
+                            if (isset($validation)) {
+                                echo '<div class="alert alert-danger">';
+                                echo mostra_erro($validation, 'nome');
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
 
 
                         <div class="form-group">
-                            <label for="inputAddress">Cep</label>
+                            <label for="inputAddress">Cep<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'cep') : '' ?></span>
+                            <?php
+                            if (isset($validation)) {
+                                echo '<div class="alert alert-danger">';
+                                echo mostra_erro($validation, 'cep');
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress">Rua/ Avenida </label>
+                            <label for="inputAddress">Rua/ Avenida<span class="text-danger">*</span> </label>
                             <input type="text" class="form-control" id="inputAddressRua" name="rua" value="<?= set_value('rua'); ?>" required>
-                            <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'rua') : '' ?></span>
+                            <?php
+                            if (isset($validation)) {
+                                echo '<div class="alert alert-danger">';
+                                echo mostra_erro($validation, 'rua');
+                                echo '</div>';
+                            }
+                            ?>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputCity">Cidade</label>
+                                    <label for="inputCity">Cidade<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="inputCity" name="cidade" value="<?= set_value('cidade'); ?>" required>
-                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'cidade') : '' ?></span>
+                                    <?php
+                                    if (isset($validation)) {
+                                        echo '<div class="alert alert-danger">';
+                                        echo mostra_erro($validation, 'cidade');
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="inputState">Estado</label>
+                                    <label for="inputState">Estado<span class="text-danger">*</span></label>
                                     <select id="inputState" name="estado" class="form-control" required>
                                         <option selected hidden>Escolha...</option>
                                         <option value="AC">Acre</option>
@@ -123,39 +147,74 @@
                                         <option value="SE">Sergipe</option>
                                         <option value="TO">Tocantins</option>
                                     </select>
-                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'estado') : '' ?></span>
+                                    <?php
+                                    if (isset($validation)) {
+                                        echo '<div class="alert alert-danger">';
+                                        echo mostra_erro($validation, 'estado');
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputAddress2">Complemento</label>
                                 <input type="text" class="form-control" id="inputAddress2" name="complemento" value="<?= set_value('complemento'); ?>">
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'complemento') : '' ?></span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputSurname">Nome do responsável pela clínica</label>
+                                <label for="inputSurname">Nome do responsável pela clínica<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="inputSurname" name="responsavel" value="<?= set_value('responsavel'); ?>" required>
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'responsavel') : '' ?></span>
+                                <?php
+                                if (isset($validation)) {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'responsavel');
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="inputZip">Telefone (whatsapp)</label>
+                                <label for="inputZip">Telefone (whatsapp)<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="inputZip" name="telefone" value="<?= set_value('telefone'); ?>" required>
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'telefone') : '' ?></span>
+                                <?php
+                                if (isset($validation)) {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'telefone');
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
+                                <label for="inputEmail4">Email<span class="text-danger">*</span></label>
                                 <input type="email" value="<?= set_value('email'); ?>" class="form-control" id="inputEmail4" name="email" required>
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'email') : '' ?></span>
+                                <?php
+                                if (isset($validation)) {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'email');
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Senha</label>
+                                <label for="inputPassword4">Senha<span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="inputPassword4" name="senha" required>
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha') : '' ?></span>
+                                <?php
+                                if (isset($validation)) {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'senha');
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Repetir senha</label>
+                                <label for="inputPassword4">Repetir senha<span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="inputPassword4" name="senha2" required>
-                                <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha2') : '' ?></span>
+                                <?php
+                                if (isset($validation)) {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'senha2');
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                         </div>
 
