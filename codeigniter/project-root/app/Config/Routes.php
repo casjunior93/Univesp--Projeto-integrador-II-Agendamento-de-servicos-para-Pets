@@ -45,16 +45,21 @@ $routes->get('cadastre-se', 'Auth::registro');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
-    //$routes->get('dashboard', 'Dash::index');
+
+    //Luciana: Rotas de área logada
+
+    //Pro dashboard chama os metodos do controller Dash
+    $routes->get('dashboard', 'Dash::index');
+
+    //Luciana: Fim de rotas de área logada
 });
 
-//Inicio - Luciana
+//Luciana: rotas de áreas não logadas
 
 $routes->get('recuperar-senha', 'Auth::recuperarSenha');
-//Pro dashboard chama os metodos do controller Dash
-$routes->get('dashboard', 'Dash::index');
 
-//Fim - Luciana
+//Luciana: fim de rotas de áreas não logadas
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
