@@ -60,12 +60,14 @@
             <h3>Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
+
 <div class="container">
   <ul class="nav nav-pills">
   <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li role="presentation"><a href="#">Agenda</a></li>
+  <li role="presentation"><a href="#">Inserir adoção </a></li>
 </ul>
+
 </div>
     </body>
 
