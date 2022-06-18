@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
+
+
     <!-- STYLES -->
 
     <style {csp-style-nonce}>
@@ -192,6 +194,19 @@
             }
         }
     </style>
+
+   <!-- jquery codigo -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="<? echo base_url('includes/bootstrap/css/bootstrap.min.css') ?>">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="<? echo base_url('includes/bootstrap/js/bootstrap.min.js') ?>"></script>
+
+
+   <!-- fim jquery-->
+
 </head>
 <body>
 
