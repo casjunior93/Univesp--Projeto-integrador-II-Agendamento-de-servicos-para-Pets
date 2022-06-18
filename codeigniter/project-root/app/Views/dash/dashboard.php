@@ -63,14 +63,14 @@
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-<div class="container">
+<sectio>
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
   <li role="presentation"><a href="#">Agenda </a></li>
   <li role="presentation"><a href="#">Cadastrar Animal</a></li>
 </ul>
 
-</div>
+</section>
     </body>
 
     <!-- Footer-->
