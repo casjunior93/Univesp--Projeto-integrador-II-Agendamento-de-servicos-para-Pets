@@ -85,9 +85,28 @@ class Auth extends BaseController
   function logar()
   {
     //validando campos do formulario
-    $validation = $this->validate([
+    /* $validation = $this->validate([
       'email' => 'required|valid_email|is_not_unique[usuarios.email]',
       'senha' => 'required|min_length[5]|max_length[12]',
+    ]); */
+
+    $validation = $this->validate([
+      'email' => [
+        'rules' => 'required|valid_email|is_not_unique[usuarios.email]',
+        'errors' => [
+          'required' => 'Campo email não pode ficar vazio',
+          'valid_email' => 'Email inválido',
+          'is_not_unique' => 'Email não cadastrado'
+        ]
+      ],
+      'senha' => [
+        'rules' => 'required|min_length[5]|max_length[12]',
+        'errors' => [
+          'required' => 'Campo senha não pode ficar vazio',
+          'min_length' => 'Senha deve ter mais de 5 caracteres',
+          'max_length' => 'Senha deve ter menos de 12 caracteres',
+        ]
+      ]
     ]);
 
     if (!$validation) {
