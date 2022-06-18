@@ -20,6 +20,7 @@
     <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
     <link href="<?= base_url('/'); ?>/css/bootstrap.css" rel="stylesheet" />
     <script src="<?= base_url('/'); ?>/includes/bootstrap.min.css"></script>
+    <script src="<?= base_url('/'); ?>/includes/override.css"></script>
     <script src="<?= base_url('/'); ?>/includes/bootstrap.min.js"></script>
     <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
