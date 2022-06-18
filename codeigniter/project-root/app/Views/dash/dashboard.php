@@ -62,10 +62,10 @@
         </section>
 
 <div class="container">
-  <ul class="nav nav-pills">
+<ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Agenda</a></li>
-  <li role="presentation"><a href="#">Inserir adoção </a></li>
+  <li role="presentation"><a href="#">Agenda </a></li>
+  <li role="presentation"><a href="#">Cadastrar Animal</a></li>
 </ul>
 
 </div>
