@@ -50,7 +50,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <h1>Dashboard</h1>
+            <h1>Meu Dashboard</h1>
         </div>
     </header>
 
@@ -60,7 +60,13 @@
             <h3>Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
-
+<div class="container">
+  <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+</div>
     </body>
 
     <!-- Footer-->
