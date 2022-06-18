@@ -68,7 +68,8 @@
                                 <legend>Recupere sua senha</legend>
                                 <br> <br> <br>
                                 <div class="form-group">
-                                    <label for="esqueci-senha">Informe seu email de cadastro </label>
+                                    <label for="esqueci-senha">Informe seu email de cadastro </label> <br> <br>
+
                                     <input value='' id="esqueci-senha" placeholder="Email de recuperação" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
                                     <span class=" text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                                 </div>
@@ -92,7 +93,7 @@
                                     <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Enviar" />
                                 </div> 
                             Fim comentario -->
-                               
+                            <br> <br>
                                 <div class="form-group">
                                    <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Recuperar minha senha </a></button>
                                 </div>
