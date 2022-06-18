@@ -13,13 +13,21 @@ class Dash extends BaseController
 
   public function index()
   {
-    //Luciana
-    //troca para o arquivo index do dashboard
-    return view('dash/dashboard');
+    $userModel = new \App\Models\UserModel();
+    $id_usuario_logado = session()->get('loggedUser');
+    $info_usuario = $userModel->find($id_usuario_logado);
+
+    $dados = [
+      'title' => 'Dashboard',
+      'info_usuario' => $info_usuario
+    ];
+
+    return view('dash/dashboard', $dados);
   }
 
   public function cadastroServico()
   {
+    //Luciana
     //troca para o arquivo de cadastro de serviço
     return view('dash/cadastre-se');
   }

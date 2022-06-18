@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Cadastre-se | Mascote web</title>
+    <title><?= $title; ?> | Mascote web</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -57,7 +57,7 @@
     <body>
 
         <section class="page-section">
-            <h3>Olá, Usuário!</h3>
+            <h3>Olá, <?= $info_usuario['nome']; ?>!</h3>
         </section>
 
     </body>
