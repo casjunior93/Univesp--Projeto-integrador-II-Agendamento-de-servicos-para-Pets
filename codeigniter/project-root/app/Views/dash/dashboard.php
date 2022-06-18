@@ -62,15 +62,19 @@
             <h3>Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
+<br><br>
+<br>
+<br>
+<br>
 
-<sectio>
+
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
   <li role="presentation"><a href="#">Agenda </a></li>
   <li role="presentation"><a href="#">Cadastrar Animal</a></li>
 </ul>
 
-</section>
+
     </body>
 
     <!-- Footer-->
