@@ -21,6 +21,12 @@ class Auth extends BaseController
     return view('auth/cadastre-se');
   }
 
+  public function recuperarSenha()
+  {
+    //Luciana
+    return view('auth/recuperar-senha');
+  }
+
   public function salvar()
   {
     //validando campos do formulario

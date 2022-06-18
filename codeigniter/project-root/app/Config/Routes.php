@@ -42,6 +42,9 @@ $routes->post('login/salvar', 'Auth::salvar');
 $routes->post('login/logar', 'Auth::logar');
 $routes->get('cadastre-se', 'Auth::registro');
 
+//Luciana
+$routes->get('recuperar-senha', 'Auth::recuperarSenha');
+
 
 /*
  * --------------------------------------------------------------------
