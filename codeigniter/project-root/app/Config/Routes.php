@@ -44,6 +44,8 @@ $routes->get('cadastre-se', 'Auth::registro');
 
 //Luciana
 $routes->get('recuperar-senha', 'Auth::recuperarSenha');
+//Pro dashboard chama os metodos do controller Dash
+$routes->get('dashboard', 'Dash::index');
 
 
 /*
