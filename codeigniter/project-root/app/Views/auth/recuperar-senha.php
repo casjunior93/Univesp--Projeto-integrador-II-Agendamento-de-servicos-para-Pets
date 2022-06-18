@@ -84,10 +84,13 @@
                                         </label>
                                     </div>
                                 </div>-->
-                                <div class="form-group">
+                             
+                               <!-- botão enviar comentado --> 
+                                Botão enviar <div class="form-group">
                                 
                                     <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Enviar" />
-                                </div>
+                                </div> 
+                            <!-- Fim comentario -->
                                
                                 <div class="form-group">
                                    <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Recuperar minha senha </a></button>
