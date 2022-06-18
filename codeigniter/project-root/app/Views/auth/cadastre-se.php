@@ -72,7 +72,7 @@
                             <label for="inputName">Nome/Razão Social<span class="text-danger">*</span></label>
                             <input type="text" id="inputName" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
                             <?php
-                            if (isset($validation)) {
+                            if (isset($validation) && mostra_erro($validation, 'nome') != '') {
                                 echo '<div class="alert alert-danger">';
                                 echo mostra_erro($validation, 'nome');
                                 echo '</div>';
@@ -85,7 +85,7 @@
                             <label for="inputAddress">Cep<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" required>
                             <?php
-                            if (isset($validation)) {
+                            if (isset($validation) && mostra_erro($validation, 'cep') != '') {
                                 echo '<div class="alert alert-danger">';
                                 echo mostra_erro($validation, 'cep');
                                 echo '</div>';
@@ -96,7 +96,7 @@
                             <label for="inputAddress">Rua/ Avenida<span class="text-danger">*</span> </label>
                             <input type="text" class="form-control" id="inputAddressRua" name="rua" value="<?= set_value('rua'); ?>" required>
                             <?php
-                            if (isset($validation)) {
+                            if (isset($validation) && mostra_erro($validation, 'rua') != '') {
                                 echo '<div class="alert alert-danger">';
                                 echo mostra_erro($validation, 'rua');
                                 echo '</div>';
@@ -107,7 +107,7 @@
                                     <label for="inputCity">Cidade<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="inputCity" name="cidade" value="<?= set_value('cidade'); ?>" required>
                                     <?php
-                                    if (isset($validation)) {
+                                    if (isset($validation) && mostra_erro($validation, 'cidade') != '') {
                                         echo '<div class="alert alert-danger">';
                                         echo mostra_erro($validation, 'cidade');
                                         echo '</div>';
@@ -148,7 +148,7 @@
                                         <option value="TO">Tocantins</option>
                                     </select>
                                     <?php
-                                    if (isset($validation)) {
+                                    if (isset($validation) && mostra_erro($validation, 'estado') != '') {
                                         echo '<div class="alert alert-danger">';
                                         echo mostra_erro($validation, 'estado');
                                         echo '</div>';
@@ -165,7 +165,7 @@
                                 <label for="inputSurname">Nome do responsável pela clínica<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="inputSurname" name="responsavel" value="<?= set_value('responsavel'); ?>" required>
                                 <?php
-                                if (isset($validation)) {
+                                if (isset($validation) && mostra_erro($validation, 'responsavel') != '') {
                                     echo '<div class="alert alert-danger">';
                                     echo mostra_erro($validation, 'responsavel');
                                     echo '</div>';
@@ -176,7 +176,7 @@
                                 <label for="inputZip">Telefone (whatsapp)<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="inputZip" name="telefone" value="<?= set_value('telefone'); ?>" required>
                                 <?php
-                                if (isset($validation)) {
+                                if (isset($validation) && mostra_erro($validation, 'telefone') != '') {
                                     echo '<div class="alert alert-danger">';
                                     echo mostra_erro($validation, 'telefone');
                                     echo '</div>';
@@ -187,7 +187,7 @@
                                 <label for="inputEmail4">Email<span class="text-danger">*</span></label>
                                 <input type="email" value="<?= set_value('email'); ?>" class="form-control" id="inputEmail4" name="email" required>
                                 <?php
-                                if (isset($validation)) {
+                                if (isset($validation) && mostra_erro($validation, 'email') != '') {
                                     echo '<div class="alert alert-danger">';
                                     echo mostra_erro($validation, 'email');
                                     echo '</div>';
@@ -196,9 +196,9 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Senha<span class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="inputPassword4" name="senha" required>
+                                <input type="password" class="form-control" id="inputPassword4" name="senha" required minlength="5" maxlength="12">
                                 <?php
-                                if (isset($validation)) {
+                                if (isset($validation) && mostra_erro($validation, 'senha') != '') {
                                     echo '<div class="alert alert-danger">';
                                     echo mostra_erro($validation, 'senha');
                                     echo '</div>';
@@ -207,9 +207,9 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Repetir senha<span class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="inputPassword4" name="senha2" required>
+                                <input type="password" class="form-control" id="inputPassword4" name="senha2" required minlength="5" maxlength="12">
                                 <?php
-                                if (isset($validation)) {
+                                if (isset($validation) && mostra_erro($validation, 'senha2') != '') {
                                     echo '<div class="alert alert-danger">';
                                     echo mostra_erro($validation, 'senha2');
                                     echo '</div>';

@@ -31,16 +31,73 @@ class Auth extends BaseController
   {
     //validando campos do formulario
     $validation = $this->validate([
-      'nome' => 'required',
-      'email' => 'required|valid_email|is_unique[usuarios.email]',
-      'senha' => 'required|min_length[5]|max_length[12]',
-      'senha2' => 'required|min_length[5]|max_length[12]|matches[senha]',
-      'cep' => 'required',
-      'rua' => 'required',
-      'cidade' => 'required',
-      'estado' => 'required',
-      'responsavel' => 'required',
-      'telefone' => 'required'
+      'nome' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo nome não pode ficar vazio'
+        ]
+      ],
+      'email' => [
+        'rules' => 'required|valid_email|is_unique[usuarios.email]',
+        'errors' => [
+          'required' => 'Campo email não pode ficar vazio',
+          'valid_email' => 'Email inválido',
+          'is_unique' => 'Email já cadastrado'
+        ]
+      ],
+      'senha' => [
+        'rules' => 'required|min_length[5]|max_length[12]',
+        'errors' => [
+          'required' => 'Campo senha não pode ficar vazio',
+          'min_length' => 'Senha deve ter mais de 5 caracteres',
+          'max_length' => 'Senha deve ter menos de 12 caracteres'
+        ]
+      ],
+      'senha2' => [
+        'rules' => 'required|min_length[5]|max_length[12]|matches[senha]',
+        'errors' => [
+          'required' => 'Campo senha não pode ficar vazio',
+          'min_length' => 'Senha deve ter mais de 5 caracteres',
+          'max_length' => 'Senha deve ter menos de 12 caracteres',
+          'matches' => 'As senhas não correspondem',
+        ]
+      ],
+      'cep' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo cep não pode ficar vazio'
+        ]
+      ],
+      'rua' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo rua não pode ficar vazio'
+        ]
+      ],
+      'cidade' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo cidade não pode ficar vazio'
+        ]
+      ],
+      'estado' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo estado não pode ficar vazio'
+        ]
+      ],
+      'responsavel' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo responsavel não pode ficar vazio'
+        ]
+      ],
+      'telefone' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo telefone não pode ficar vazio'
+        ]
+      ]
     ]);
 
     if (!$validation) {
