@@ -142,10 +142,6 @@ class Auth extends BaseController
   function logar()
   {
     //validando campos do formulario
-    /* $validation = $this->validate([
-      'email' => 'required|valid_email|is_not_unique[usuarios.email]',
-      'senha' => 'required|min_length[5]|max_length[12]',
-    ]); */
 
     $validation = $this->validate([
       'email' => [
@@ -183,8 +179,7 @@ class Auth extends BaseController
       } else {
         $user_id = $usuario_info['id'];
         session()->set('loggedUser', $user_id);
-        #return redirect()->to('/dashboard');
-        echo 'Olá, ' . $usuario_info['nome'];
+        return redirect()->to('/dashboard');
       }
     }
   }

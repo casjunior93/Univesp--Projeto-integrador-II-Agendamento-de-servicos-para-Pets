@@ -50,6 +50,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
+            <h1>Dashboard</h1>
         </div>
     </header>
 
