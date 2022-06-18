@@ -83,15 +83,14 @@
                                             <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar-me
                                         </label>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="form-group">
-                                    -->
+                                
                                     <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Enviar" />
                                 </div>
                                 <span class='text-center'><a href="/resetting/request" class="text-sm">Esqueci minha senha</a></span>
                                 <div class="form-group">
-                                    <p class="text-center m-t-xs text-sm">Ainda não tem conta?</p>
-                                    <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Criar uma conta </a></button>
+                                   <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Recuperar minha senha </a></button>
                                 </div>
                             </form>
 
