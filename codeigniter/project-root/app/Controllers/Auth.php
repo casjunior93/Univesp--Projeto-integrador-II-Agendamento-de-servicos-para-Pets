@@ -134,7 +134,10 @@ class Auth extends BaseController
       if (!$query) {
         return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
       } else {
-        return redirect()->to('entre-cadastre-se')->with('success', 'Registrado com sucesso! Faça login com suas credenciais.');
+        //return redirect()->to('entre-cadastre-se')->with('success', 'Registrado com sucesso! Faça login com suas credenciais.');
+        $id_usuario = $userModel->insertID();
+        session()->set('loggedUser', $id_usuario);
+        return redirect()->to('/dashboard');
       }
     }
   }
@@ -181,6 +184,14 @@ class Auth extends BaseController
         session()->set('loggedUser', $user_id);
         return redirect()->to('/dashboard');
       }
+    }
+  }
+
+  function sair()
+  {
+    if (session()->has('loggedUser')) {
+      session()->remove('loggedUser');
+      return redirect()->to('entre-cadastre-se/?access=out')->with('fail', 'Você saiu!');
     }
   }
 }

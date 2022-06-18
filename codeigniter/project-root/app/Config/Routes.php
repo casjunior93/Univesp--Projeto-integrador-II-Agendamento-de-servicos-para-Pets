@@ -36,18 +36,25 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-#$routes->get('/', 'Auth::registro');
+//$routes->get('/', 'Auth::registro');
 $routes->get('entre-cadastre-se', 'Auth::index');
 $routes->post('login/salvar', 'Auth::salvar');
 $routes->post('login/logar', 'Auth::logar');
+$routes->get('login/sair', 'Auth::sair');
 $routes->get('cadastre-se', 'Auth::registro');
 
-//Luciana
+//Rotas protegidas por login
+$routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
+    //$routes->get('dashboard', 'Dash::index');
+});
+
+//Inicio - Luciana
+
 $routes->get('recuperar-senha', 'Auth::recuperarSenha');
 //Pro dashboard chama os metodos do controller Dash
 $routes->get('dashboard', 'Dash::index');
 
-
+//Fim - Luciana
 /*
  * --------------------------------------------------------------------
  * Additional Routing
