@@ -37,4 +37,17 @@ class Dash extends BaseController
     //troca para o arquivo de cadastro de animal
     return view('dash/recuperar-senha');
   }
+
+  public function baseDashboard()
+  {
+    $userModel = new \App\Models\UserModel();
+    $id_usuario_logado = session()->get('loggedUser');
+    $info_usuario = $userModel->find($id_usuario_logado);
+
+    $dados = [
+      'title' => 'Base do Dashboard',
+      'info_usuario' => $info_usuario
+    ];
+    return view('dash/base', $dados);
+  }
 }

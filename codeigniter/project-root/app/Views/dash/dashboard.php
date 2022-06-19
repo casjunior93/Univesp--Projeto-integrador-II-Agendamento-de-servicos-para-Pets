@@ -320,15 +320,8 @@
             </div>
         </div>
     </div>
-    <!-- Core theme JS-->
-    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-
+    <!-- Scripts da pasta public -->
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
     <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>

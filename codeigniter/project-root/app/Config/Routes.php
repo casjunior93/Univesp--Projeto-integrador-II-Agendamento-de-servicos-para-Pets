@@ -50,6 +50,7 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
 
     //Pro dashboard chama os metodos do controller Dash
     $routes->get('dashboard', 'Dash::index');
+    $routes->get('base-dash', 'Dash::baseDashboard');
 
     //Luciana: Fim de rotas de área logada
 });
