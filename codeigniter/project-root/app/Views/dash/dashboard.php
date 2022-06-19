@@ -72,7 +72,7 @@
 
 <br><br>
 <br>
-<div class="container">
+
 <!-- Tabs navs -->
 <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
   <li class="nav-item" role="presentation">
@@ -84,8 +84,7 @@
       role="tab"
       aria-controls="ex1-tabs-1"
       aria-selected="true"
-      >Tab 1</a
-    >
+      >Tab 1</a>
   </li>
   <li class="nav-item" role="presentation">
     <a
@@ -133,7 +132,7 @@
 </div>
 <!-- Tabs content -->
 
-</div>
+
 
     </body>
 
