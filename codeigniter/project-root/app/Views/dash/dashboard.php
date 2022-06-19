@@ -121,13 +121,13 @@
     role="tabpanel"
     aria-labelledby="ex1-tab-1"
   >
-    Tab 1 content
+    Minha Agenda 
   </div>
   <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-    Tab 2 content
+    Estatisticas por data
   </div>
   <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-    Tab 3 content
+    Cadastrar para adoção
   </div>
 </div>
 <!-- Tabs content -->
