@@ -8,27 +8,16 @@
     <meta name="author" content="" />
     <title><?= $title; ?> | Mascote web</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url('/'); ?>/assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-
-
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('/'); ?>/css/modal.css" />
     <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
-    <link href="<?= base_url('/'); ?>/css/bootstrap.css" rel="stylesheet" />
-    <script src="<?= base_url('/'); ?>/includes/bootstrap/bootstrap.min.css"></script>
-    <script src="<?= base_url('/'); ?>/css/override.css"></script>
-    <script src="<?= base_url('/'); ?>/includes/bootstrap/bootstrap.min.js"></script>
-    <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
-    <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
-    <!-- chamando o boostrap direto da internet -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-
+    <link href="<?= base_url('/'); ?>/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="<?= base_url('/'); ?>/css/override.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -59,82 +48,45 @@
         </div>
     </header>
 
-    <body>
-    <section class="page-section">
+    <section>
+        <section class="page-section d-flex justify-content-between">
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-   
-    <section class="page-section">
-            <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
-            <a href="<?= base_url('login/sair'); ?>">Sair</a>
-        </section>
+        <!-- Tabs de navegação -->
 
-<!-- Tabs navs -->
-<div class="container">
-<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link active"
-      id="ex1-tab-1"
-      data-mdb-toggle="tab"
-      href="#ex1-tabs-1"
-      role="tab"
-      aria-controls="ex1-tabs-1"
-      aria-selected="true"
-      >Agenda</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="ex1-tab-2"
-      data-mdb-toggle="tab"
-      href="#ex1-tabs-2"
-      role="tab"
-      aria-controls="ex1-tabs-2"
-      aria-selected="false"
-      >Estatísticas</a
-    >
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="ex1-tab-3"
-      data-mdb-toggle="tab"
-      href="#ex1-tabs-3"
-      role="tab"
-      aria-controls="ex1-tabs-3"
-      aria-selected="false"
-      >Cadastrar para Adoção</a
-    >
-  </li>
-</ul>
-<!-- Tabs navs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Agenda</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Estatísticas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Cadastrar para Adoção</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
 
-<!-- Tabs content -->
-<div class="tab-content" id="ex1-content">
-  <div
-    class="tab-pane fade show active"
-    id="ex1-tabs-1"
-    role="tabpanel"
-    aria-labelledby="ex1-tab-1"
-  >
-    Minha Agenda 
-  </div>
-  <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-    Estatisticas por data
-  </div>
-  <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-    Cadastrar para adoção
-  </div>
-</div>
-</div>
-<!-- Tabs content -->
+            <!-- Agenda -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                Minha Agenda
+            </div>
+            <!-- Fim Agenda -->
 
+            <!-- Estatisticas -->
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Estatisticas por data</div>
+            <!-- Fim Estatisticas -->
 
+            <!-- Cadastrar para adoção -->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Cadastrar para adoção</div>
+            <!-- Fim Cadastrar para adoção -->
 
-    </body>
+        </div>
+
+        <!-- Fim das Tabs de navegação -->
+    </section>
 
     <!-- Footer-->
     <footer class="footer py-4">
@@ -368,15 +320,19 @@
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+    <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
+    <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
+
 </body>
 
 </html>
