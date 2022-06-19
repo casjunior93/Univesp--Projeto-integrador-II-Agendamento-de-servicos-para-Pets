@@ -25,6 +25,8 @@
     <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
+    <!-- chamando o boostrap direto da internet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 
 </head>
@@ -60,7 +62,7 @@
     <body>
 
   
-    <section class="olaUser">
+    <section class="page-section">
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
