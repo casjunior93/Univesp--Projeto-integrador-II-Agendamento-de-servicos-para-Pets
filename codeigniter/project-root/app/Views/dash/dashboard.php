@@ -74,9 +74,10 @@
 <br>
 <div class="container">
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Agenda </a></li>
-  <li role="presentation"><a href="#">Cadastrar Animal</a></li>
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Menu 1</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
 </ul>
 </div>
 
