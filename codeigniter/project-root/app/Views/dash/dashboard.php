@@ -70,9 +70,6 @@
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-<br><br>
-<br>
-
 <!-- Tabs navs -->
 <div class="container">
 <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
