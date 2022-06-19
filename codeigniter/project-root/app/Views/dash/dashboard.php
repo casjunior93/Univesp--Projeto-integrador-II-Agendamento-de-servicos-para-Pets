@@ -61,7 +61,7 @@
 
     <body>
 
-    <h2> Teste Dashboard </h2>
+    <h2 class="right"> Teste Dashboard </h2>
 
 
   

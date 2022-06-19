@@ -127,6 +127,10 @@ h2, .h2 {
   }
 }
 
+h2, .right {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
 }
