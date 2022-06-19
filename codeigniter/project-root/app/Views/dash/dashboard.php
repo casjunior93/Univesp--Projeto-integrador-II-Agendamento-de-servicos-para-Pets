@@ -60,8 +60,8 @@
     <body>
 
    <div class="olaUser">
-    <section class="olaUser">
-            <h3>Olá, <?= $info_usuario['nome']; ?>!</h3>
+    <section class="page-section">
+            <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 </div>
