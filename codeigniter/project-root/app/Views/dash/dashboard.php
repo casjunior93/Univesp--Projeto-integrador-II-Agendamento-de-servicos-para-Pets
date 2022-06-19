@@ -48,7 +48,7 @@
         </div>
     </header>
 
-    <section>
+    <main>
         <section class="page-section d-flex justify-content-between">
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Fim das Tabs de navegação -->
-    </section>
+    </main>
 
     <!-- Footer-->
     <footer class="footer py-4">
