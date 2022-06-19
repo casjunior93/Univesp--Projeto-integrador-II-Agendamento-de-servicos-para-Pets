@@ -61,6 +61,9 @@
 
     <body>
 
+    <h2> Teste Dashboard </h2>
+
+
   
     <section class="page-section">
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
@@ -69,13 +72,13 @@
 
 <br><br>
 <br>
-
+<div class="container">
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
   <li role="presentation"><a href="#">Agenda </a></li>
   <li role="presentation"><a href="#">Cadastrar Animal</a></li>
 </ul>
-
+</div>
 
     </body>
 
