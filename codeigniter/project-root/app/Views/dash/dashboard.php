@@ -64,12 +64,13 @@
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
+
+
+
+
 </div>
 <br><br>
 <br>
-<br>
-<br>
-
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Home</a></li>
