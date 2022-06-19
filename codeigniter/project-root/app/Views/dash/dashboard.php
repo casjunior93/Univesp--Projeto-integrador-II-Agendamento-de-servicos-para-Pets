@@ -65,9 +65,7 @@
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-    <h2 class="right"> Teste Dashboard </h2>
-
-  
+   
     <section class="page-section">
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
