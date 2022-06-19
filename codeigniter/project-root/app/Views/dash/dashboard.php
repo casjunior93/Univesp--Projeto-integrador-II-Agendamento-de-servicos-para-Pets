@@ -84,7 +84,7 @@
       role="tab"
       aria-controls="ex1-tabs-1"
       aria-selected="true"
-      >Tab 1</a>
+      >Agenda</a>
   </li>
   <li class="nav-item" role="presentation">
     <a
@@ -95,7 +95,7 @@
       role="tab"
       aria-controls="ex1-tabs-2"
       aria-selected="false"
-      >Tab 2</a
+      >Estatísticas</a
     >
   </li>
   <li class="nav-item" role="presentation">
@@ -107,7 +107,7 @@
       role="tab"
       aria-controls="ex1-tabs-3"
       aria-selected="false"
-      >Tab 3</a
+      >Cadastrar para Adoção</a
     >
   </li>
 </ul>
