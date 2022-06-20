@@ -63,7 +63,7 @@
               <div class="conteudo col-12">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Pingo</h5>
-                  <small class="badge bg-primary text-white">3 anos</small>
+                  <small class="badge bg-warning text-black">3 anos</small>
                 </div>
                 <div class="d-flex w-100 justify-content-between pt-2">
                   <div class="texto">
@@ -72,7 +72,7 @@
                     <p class="mb-1"><strong>Local para adoção:</strong> Clínica Anjos de Patas</p>
                   </div>
                   <div class="botao d-flex align-items-end">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#animal-1">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-1">
                       Adotar
                     </button>
                   </div>
@@ -90,7 +90,7 @@
               <div class="conteudo col-12">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Estrela</h5>
-                  <small class="badge bg-primary text-white">1 anos</small>
+                  <small class="badge bg-warning text-black">1 ano</small>
                 </div>
                 <div class="d-flex w-100 justify-content-between pt-2">
                   <div class="texto">
@@ -99,7 +99,7 @@
                     <p class="mb-1"><strong>Local para adoção:</strong> Clínica Anjos de Patas</p>
                   </div>
                   <div class="botao d-flex align-items-end">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#animal-2">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-2">
                       Adotar
                     </button>
                   </div>
