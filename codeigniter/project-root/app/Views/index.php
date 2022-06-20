@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Mascote Web</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Animais para adoção </a></li>
+                    <li class="nav-item"><a href="<?= base_url('animais-adocao'); ?>" class="nav-link" href="#portfolio">Animais para adoção </a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Sou Clínica / Hospital</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
@@ -314,7 +314,7 @@
         </div>
     </section>
     <!-- Clients-->
-<!--
+    <!--
     <div class="py-5">
         <div class="container">
             <div class="row align-items-center">
