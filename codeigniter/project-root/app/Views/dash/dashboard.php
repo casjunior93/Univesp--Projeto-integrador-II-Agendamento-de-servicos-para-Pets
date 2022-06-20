@@ -20,12 +20,12 @@
     <link href="<?= base_url('/'); ?>/css/override.css" rel="stylesheet" />
 
     <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+    </script>
 
-   
+
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -40,9 +40,9 @@
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Mascote Web</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Adote! </a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Clínicas e Veterinários</a></li>
-                <!--    <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li> -->
+                    <!--    <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-warning"> Entrar </a></button>
+                    <a href="<?= base_url('login/sair'); ?>" button type="button" class="btn btn-warning"> Sair </a></button>
                 </ul>
             </div>
         </div>
@@ -60,17 +60,17 @@
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-<!-- formulario Data -->
+        <!-- formulario Data -->
 
 
-<div class="form-group">
-<form action="/action_page.php" method="post">
-<input type="text" id="datepicker" />
- </form>
-</div>
+        <div class="form-group">
+            <form action="/action_page.php" method="post">
+                <input type="text" id="datepicker" />
+            </form>
+        </div>
 
 
-<!-- Fim formulario de  data --> 
+        <!-- Fim formulario de  data -->
 
 
         <!-- Tabs de navegação -->
@@ -347,9 +347,9 @@
     <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
     <!-- Chamando jquery para teste de calendario-->
-    <script src="<?=base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
+    <script src="<?= base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
 
-</head>
+    </head>
 
 </body>
 
