@@ -18,6 +18,10 @@
     <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
     <link href="<?= base_url('/'); ?>/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="<?= base_url('/'); ?>/css/override.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 </head>
 
 <body id="page-top">
@@ -62,8 +66,8 @@ $(function() {
 </script>
 <div class="form-group">
 <form action="/action_page.php" method="get">
-  <label for="dataAgendamento">Data do agendamento </label>
-  <input type="text" id="dataAgendamento" name="dataAgendamento"><br><br>
+  <label for="calendario">Data do agendamento </label>
+  <input type="text" id="calendario" name="calendario"><br><br>
   <button type="button" class="btn btn-primary">Lorem</button>
  
 </form>
