@@ -55,6 +55,11 @@
         </section>
 
 <!-- formulario Data -->
+<script>
+$(function() {
+    $( "#calendario" ).datepicker();
+});
+</script>
 <div class="form-group">
 <form action="/action_page.php" method="get">
   <label for="dataAgendamento">Data do agendamento </label>
