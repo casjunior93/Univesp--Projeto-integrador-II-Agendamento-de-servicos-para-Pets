@@ -80,7 +80,7 @@
                     <p class="mb-1"><strong>Sobre:</strong> Somos uma clínica que desde 2002 cuidamos muito bem dos pets de nossos clientes.</p>
                     <p class="mb-1"><strong>Endereço:</strong> Rua A, 35, Bairro B, Andradas-MG</p>
                   </div>
-                  <div class="botao d-flex align-items-center">
+                  <div class="botao d-flex align-items-start">
                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-1">
                       Fazer orçamento
                     </button>
@@ -132,13 +132,13 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="tosa" name="tosa">
                 <label class="form-check-label" for="tosa">
-                  Tosa
+                  Tosa - R$35,00
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="banho" checked>
                 <label class="form-check-label" for="banho">
-                  Banho
+                  Banho - R$40,00
                 </label>
               </div>
             </div>
