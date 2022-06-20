@@ -19,13 +19,7 @@
     <link href="<?= base_url('/'); ?>/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="<?= base_url('/'); ?>/css/override.css" rel="stylesheet" />
 
-   <!-- Chamando jquery para teste de calendario-->
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-</head>
-
+   
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -61,12 +55,14 @@
         </section>
 
 <!-- formulario Data -->
+
+</script>
+<div class="form-group">
 <script>
 $(function() {
     $( "#calendario" ).datepicker();
 });
 </script>
-<div class="form-group">
 <form action="/action_page.php" method="get">
   <label for="calendario">Data do agendamento </label>
   <input type="text" id="calendario" name="calendario"><br><br>
@@ -352,6 +348,10 @@ $(function() {
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
     <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
+    <!-- Chamando jquery para teste de calendario-->
+<script src="<?=base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
+
+
 
 </body>
 
