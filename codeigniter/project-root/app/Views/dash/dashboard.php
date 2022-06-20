@@ -61,17 +61,15 @@
         </section>
 
         <!-- formulario Data -->
-
-
-        <div class="form-group">
+        <div class="formulario-filtro-data" col-12>
             <form action="/action_page.php" method="post">
-                <input type="text" id="datepicker" />
+                <div class="form-group col-2">
+                    <label for="filtro-data">Filtrar por data</label>
+                    <input id="filtro-data" class="form-control" type="date" />
+                </div>
             </form>
         </div>
-
-
         <!-- Fim formulario de  data -->
-
 
         <!-- Tabs de navegação -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
