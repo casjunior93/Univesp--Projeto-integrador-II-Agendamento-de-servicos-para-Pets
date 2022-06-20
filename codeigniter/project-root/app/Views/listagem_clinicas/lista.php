@@ -70,10 +70,7 @@
       <ul class="list-group lista-animais">
         <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
           <div class="d-flex">
-            <div class="img-animal col-2 d-flex  justify-content-center">
-              <img src="https://img.elo7.com.br/product/original/290D03C/adesivo-vitrine-pet-shop-clinica-veterinaria-parede-m1t2-salao.jpg" alt="Foto da clínica Anjos de Patas." height="120">
-            </div>
-            <div class="dados-animal col-10 d-flex align-items-center">
+            <div class="dados-animal col-12 d-flex align-items-center">
               <div class="conteudo col-12">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Clínica Anjos de Patas</h5>
