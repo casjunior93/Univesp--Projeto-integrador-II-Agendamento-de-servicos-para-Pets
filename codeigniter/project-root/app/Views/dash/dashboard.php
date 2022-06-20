@@ -19,6 +19,12 @@
     <link href="<?= base_url('/'); ?>/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="<?= base_url('/'); ?>/css/override.css" rel="stylesheet" />
 
+    <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
    
 <body id="page-top">
     <!-- Navigation-->
@@ -56,14 +62,9 @@
 
 <!-- formulario Data -->
 
-</script>
-<div class="form-group">
-<script>
-$(function() {
-    $( "#calendario" ).datepicker();
-});
-</script>
-<form action="/action_page.php" method="get">
+
+<!-- dois testes aqui e nenhum apareceu... se nao funcionar farei um campo basico-->
+<form action="/action_page.php" method="post">
   <label for="calendario">Data do agendamento </label>
   <input type="text" id="calendario" name="calendario"><br><br>
   <button type="button" class="btn btn-primary">Lorem</button>
@@ -349,9 +350,9 @@ $(function() {
     <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
     <!-- Chamando jquery para teste de calendario-->
-<script src="<?=base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
+    <script src="<?=base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
 
-
+</head>
 
 </body>
 
