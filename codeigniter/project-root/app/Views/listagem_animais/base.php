@@ -44,7 +44,7 @@
   <!-- Masthead-->
   <header class="masthead">
     <div class="container">
-      <h1>Meu Dashboard</h1>
+      <h1>Animais para adoção</h1>
     </div>
   </header>
 
