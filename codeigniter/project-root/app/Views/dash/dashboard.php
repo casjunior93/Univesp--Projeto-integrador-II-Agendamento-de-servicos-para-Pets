@@ -63,13 +63,10 @@
 <!-- formulario Data -->
 
 
-<!-- dois testes aqui e nenhum apareceu... se nao funcionar farei um campo basico-->
+<div class="form-group">
 <form action="/action_page.php" method="post">
-  <label for="calendario">Data do agendamento </label>
-  <input type="text" id="calendario" name="calendario"><br><br>
-  <button type="button" class="btn btn-primary">Lorem</button>
- 
-</form>
+<input type="text" id="datepicker" />
+ </form>
 </div>
 
 
