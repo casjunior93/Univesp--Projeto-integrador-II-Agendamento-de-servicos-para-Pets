@@ -51,6 +51,20 @@
   <main class="p-5 pt-0">
 
     <!-- Conteudo visível relevante vai dentro da main -->
+    <section class="listagem-section">
+      <form>
+        Filtrar por cidade:
+        <div class="col-3 d-flex">
+          <select class="form-select" aria-label="Método de pagamento">
+            <option selected>Selecionar</option>
+            <option value="1">Andradas</option>
+            <option value="2">Poços de Caldas</option>
+            <option value="3">Espírito Santo do Pinhal</option>
+          </select>
+          <input type="button" value="Filtrar" class="btn btn-warning" style="margin-left: 10px;">
+        </div>
+      </form>
+    </section>
 
     <section class="listagem-section">
       <ul class="list-group lista-animais">
@@ -153,7 +167,7 @@
             <span class="valor-final badge bg-warning text-black" style="font-size: 30px;">R$200,00</span>
             <div class="botoes">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar orçamento</button>
+              <button type="button" class="btn btn-warning">Enviar orçamento</button>
             </div>
           </div>
         </form>
