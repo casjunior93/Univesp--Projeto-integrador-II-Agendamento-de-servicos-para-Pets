@@ -54,10 +54,10 @@
 
     <section class="listagem-section">
       <ul class="list-group">
-        <li class="list-group-item list-group-item-action flex-column align-items-start p-3">
+        <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
           <div class="d-flex">
-            <div class="img col-2 d-flex  justify-content-center">
-              <img src="https://conteudo.imguol.com.br/c/entretenimento/eb/2022/03/23/cachorro-da-raca-lulu-da-pomeramia-1648065976007_v2_3x4.jpg" alt="" height="120">
+            <div class="img-animal col-2 d-flex  justify-content-center">
+              <img src="https://conteudo.imguol.com.br/c/entretenimento/eb/2022/03/23/cachorro-da-raca-lulu-da-pomeramia-1648065976007_v2_3x4.jpg" alt="Foto do animal Pingo para adoção." height="120">
             </div>
             <div class="dados-animal col-10 d-flex align-items-center">
               <div class="conteudo col-12">
@@ -81,10 +81,10 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item list-group-item-action flex-column align-items-start p-3">
+        <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
           <div class="d-flex">
-            <div class="img col-2 d-flex  justify-content-center">
-              <img src="https://seres.vet/blog/wp-content/uploads/2021/04/castracao-de-cachorro-femea.jpg" alt="" height="120">
+            <div class="img-animal col-2 d-flex  justify-content-center">
+              <img src="https://seres.vet/blog/wp-content/uploads/2021/04/castracao-de-cachorro-femea.jpg" alt="Foto do animal Estrela para adoção." height="120">
             </div>
             <div class="dados-animal col-10 d-flex align-items-center">
               <div class="conteudo col-12">

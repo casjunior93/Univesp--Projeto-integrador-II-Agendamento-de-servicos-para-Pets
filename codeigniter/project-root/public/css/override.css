@@ -1,9 +1,12 @@
-.olaUser{
+.olaUser {
+    font-size: 12 px;
+    color: #696969;
+    float: right;
+    padding-left: 25 px;
+}
 
-font-size: 12 px;
-color:#696969 ;
-float:right;
-padding-left: 25 px;
-
-
+@media (max-width: 600px) {
+    .item-animal div {
+        display: block !important;
+    }
 }
