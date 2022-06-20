@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Sou Clínica / Hospital</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-warning"> Entrar </a></button>
+                    <a href="<?= base_url('entre-cadastre-se'); ?>" type="button" class="btn btn-warning"> Entrar </a>
                 </ul>
             </div>
         </div>

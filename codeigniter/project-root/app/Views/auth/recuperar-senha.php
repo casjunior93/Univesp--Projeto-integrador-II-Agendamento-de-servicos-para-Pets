@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Sou Clínica / Hospital</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-warning"> Entrar </a></button>
+                    <a href="<?= base_url('entre-cadastre-se'); ?>" type="button" class="btn btn-warning"> Entrar </a>
                 </ul>
             </div>
         </div>
@@ -73,7 +73,7 @@
                                     <input value='' id="esqueci-senha" placeholder="Email de recuperação" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
                                     <span class=" text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
                                 </div>
-                               <!-- <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="password">Senha</label>
                                     <input id="password" value='' placeholder="Password" type="text" class="form-control" name="senha" />
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
@@ -86,16 +86,16 @@
                                         </label>
                                     </div>
                                 </div>-->
-                             
-                               <!-- botão enviar comentado 
+
+                                <!-- botão enviar comentado 
                                 <div class="form-group">
                                 
                                     <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Enviar" />
                                 </div> 
                             Fim comentario -->
-                            <br> <br>
+                                <br> <br>
                                 <div class="form-group">
-                                   <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Recuperar minha senha </a></button>
+                                    <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Recuperar minha senha </a></button>
                                 </div>
                             </form>
 

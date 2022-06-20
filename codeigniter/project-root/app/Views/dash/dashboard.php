@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Clínicas e Veterinários</a></li>
                     <!--    <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    <a href="<?= base_url('login/sair'); ?>" button type="button" class="btn btn-warning"> Sair </a></button>
+                    <a href="<?= base_url('login/sair'); ?>" type="button" class="btn btn-warning"> Sair </a>
                 </ul>
             </div>
         </div>
