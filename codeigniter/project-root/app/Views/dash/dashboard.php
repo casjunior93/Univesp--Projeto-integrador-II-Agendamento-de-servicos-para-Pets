@@ -53,6 +53,21 @@
             <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
+
+<!-- formulario Data -->
+<div class="form-group">
+<form action="/action_page.php" method="get">
+  <label for="dataAgendamento">Data do agendamento </label>
+  <input type="text" id="dataAgendamento" name="dataAgendamento"><br><br>
+  <button type="button" class="btn btn-primary">Lorem</button>
+ 
+</form>
+</div>
+
+
+<!-- Fim formulario de  data --> 
+
+
         <!-- Tabs de navegação -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -84,7 +99,10 @@
         </div>
 
         <!-- Fim das Tabs de navegação -->
+        <br><br><br>
+        <br><br><br>
     </main>
+
 
     <!-- Footer-->
     <footer class="footer py-4">
