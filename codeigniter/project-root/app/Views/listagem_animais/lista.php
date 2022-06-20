@@ -53,7 +53,7 @@
     <!-- Conteudo visível relevante vai dentro da main -->
 
     <section class="listagem-section">
-      <ul class="list-group">
+      <ul class="list-group lista-animais">
         <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
           <div class="d-flex">
             <div class="img-animal col-2 d-flex  justify-content-center">

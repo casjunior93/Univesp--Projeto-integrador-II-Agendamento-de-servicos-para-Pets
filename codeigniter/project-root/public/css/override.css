@@ -9,4 +9,7 @@
     .item-animal div {
         display: block !important;
     }
+    .lista-animais {
+        margin-top: 30px;
+    }
 }
