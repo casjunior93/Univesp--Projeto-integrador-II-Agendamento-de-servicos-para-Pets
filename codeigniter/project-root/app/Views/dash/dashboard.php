@@ -54,58 +54,159 @@
         </div>
     </header>
 
-    <main>
+    <main class="p-5 pt-0">
         <section class="page-section d-flex justify-content-between">
-            <h3 class="olaUser">Olá, <?= $info_usuario['nome']; ?>!</h3>
+            <h3 class="olaUser">Olá, <?= isset($info_usuario['nome']) ? $info_usuario['nome'] : session()->getFlashdata('nome'); ?>!</h3>
             <a href="<?= base_url('login/sair'); ?>">Sair</a>
         </section>
 
-        <!-- formulario Data -->
-        <div class="formulario-filtro-data" col-12>
-            <form action="/action_page.php" method="post">
-                <div class="form-group col-2">
-                    <label for="filtro-data">Filtrar por data</label>
-                    <input id="filtro-data" class="form-control" type="date" />
+        <!-- Mensagens de erro -->
+        <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+            <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>
+        <?php endif ?>
+
+        <?php if (!empty(session()->getFlashdata('success'))) : ?>
+            <div class='alert alert-success'><?= session()->getFlashdata('success'); ?></div>
+        <?php endif ?>
+        <!-- Fim de mensagens de erro -->
+
+        <section class="d-flex justify-content-between">
+            <h3 class="pb-3">Meus animais para adoção</h3>
+            <div>
+                <!-- Button trigger modal -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Adicionar animal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Cadastrar novo animal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="" action="<?= base_url('animais/salvar'); ?>" method="POST">
+                                    <?= csrf_field(); ?>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputName">Nome do animal<span class="text-danger">*</span></label>
+                                            <input type="text" id="nome" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
+                                            <?php
+                                            if (isset($validation) && mostra_erro($validation, 'nome') != '') {
+                                                echo '<div class="alert alert-danger">';
+                                                echo mostra_erro($validation, 'nome');
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputName">Vacinas<span class="text-danger">*</span></label>
+                                            <input type="text" id="vacinas" name="vacinas" class="form-control" value="<?= set_value('vacinas'); ?>" required>
+                                            <?php
+                                            if (isset($validation) && mostra_erro($validation, 'vacinas') != '') {
+                                                echo '<div class="alert alert-danger">';
+                                                echo mostra_erro($validation, 'vacinas');
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="sobre">Sobre<span class="text-danger">*</span></label>
+                                            <input type="text" id="sobre" name="sobre" class="form-control" value="<?= set_value('vacinas'); ?>" required>
+                                            <?php
+                                            if (isset($validation) && mostra_erro($validation, 'sobre') != '') {
+                                                echo '<div class="alert alert-danger">';
+                                                echo mostra_erro($validation, 'sobre');
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="sobre">Idade<span class="text-danger">*</span></label>
+                                            <input type="number" id="sobre" name="idade" class="form-control" value="<?= set_value('idade'); ?>" required>
+                                            <?php
+                                            if (isset($validation) && mostra_erro($validation, 'idade') != '') {
+                                                echo '<div class="alert alert-danger">';
+                                                echo mostra_erro($validation, 'idade');
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="img">Link da Foto<span class="text-danger">*</span></label>
+                                            <input type="text" id="img" name="img" class="form-control" value="<?= set_value('img'); ?>" required>
+                                            <?php
+                                            if (isset($validation) && mostra_erro($validation, 'img') != '') {
+                                                echo '<div class="alert alert-danger">';
+                                                echo mostra_erro($validation, 'img');
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Cadastrar novo animal</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
-        <!-- Fim formulario de  data -->
-
-        <!-- Tabs de navegação -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Agenda</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Estatísticas</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Cadastrar para Adoção</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-
-            <!-- Agenda -->
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                Minha Agenda
             </div>
-            <!-- Fim Agenda -->
+        </section>
 
-            <!-- Estatisticas -->
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Estatisticas por data</div>
-            <!-- Fim Estatisticas -->
+        <!-- Listagem animais -->
 
-            <!-- Cadastrar para adoção -->
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Cadastrar para adoção</div>
-            <!-- Fim Cadastrar para adoção -->
+        <section class="listagem-section">
+            <ul class="list-group lista-animais">
+                <?php
+                $qtde_animais = count($info_animais);
+                if ($qtde_animais == 0) {
+                    echo '<h3>Nenhum animal cadastrado ainda.</h3>';
+                }
+                ?>
+                <?php foreach ($info_animais as $animal) { ?>
+                    <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
+                        <div class="d-flex">
+                            <div class="img-animal col-2 d-flex  justify-content-center">
+                                <img src="<?= $animal['img']; ?>" alt="Foto do animal Pingo para adoção." height="120">
+                            </div>
+                            <div class="dados-animal col-10 d-flex align-items-center">
+                                <div class="conteudo col-12">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><?= $animal['nome']; ?></h5>
+                                        <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
+                                    </div>
+                                    <div class="d-flex w-100 justify-content-between pt-2">
+                                        <div class="texto">
+                                            <p class="mb-1"><strong>Sobre:</strong> <?= $animal['sobre']; ?></p>
+                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $animal['vacinas']; ?></p>
+                                        </div>
+                                        <div class="botao d-grid">
+                                            <button type="button" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                Marcar como adotado
+                                            </button>
+                                            <button type="button" class="btn btn-warning">
+                                                Excluir
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </section>
 
-        </div>
-
-        <!-- Fim das Tabs de navegação -->
+        <!-- Fim da listagem animais -->
         <br><br><br>
         <br><br><br>
     </main>
-
 
     <!-- Footer-->
     <footer class="footer py-4">
@@ -118,9 +219,6 @@
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
 
-
-
-
                 <div class="col-lg-4 text-lg-end">
                     <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
                     <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
@@ -128,226 +226,11 @@
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Threads
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Illustration
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Explore
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Graphic Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Finish
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Identity
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Scripts da pasta public -->
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
     <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
-    <!-- Chamando jquery para teste de calendario-->
-    <script src="<?= base_url('/'); ?>/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
-
-    </head>
 
 </body>
 

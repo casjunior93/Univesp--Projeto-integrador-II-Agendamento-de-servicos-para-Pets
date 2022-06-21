@@ -184,6 +184,17 @@
                                 ?>
                             </div>
                             <div class="form-group col-md-6">
+                                <label for="inputEmail4">Sobre a clínica<span class="text-danger">*</span></label>
+                                <textarea maxlength="255" class="form-control" name="sobre-clinica" id="sobre-clinica" required><?= set_value('sobre-clinica'); ?></textarea>
+                                <?php
+                                if (isset($validation) && mostra_erro($validation, 'email') != '') {
+                                    echo '<div class="alert alert-danger">';
+                                    echo mostra_erro($validation, 'sobre-clinica');
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email<span class="text-danger">*</span></label>
                                 <input type="email" value="<?= set_value('email'); ?>" class="form-control" id="inputEmail4" name="email" required>
                                 <?php

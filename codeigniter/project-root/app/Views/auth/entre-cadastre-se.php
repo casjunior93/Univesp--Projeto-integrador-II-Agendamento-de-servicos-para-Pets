@@ -98,7 +98,7 @@
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-warning" value="Login" />
                                 </div>
-                                <span class='text-center'><a href="/resetting/request" class="text-sm">Esqueci minha senha</a></span>
+                                <!-- <span class='text-center'><a href="/resetting/request" class="text-sm">Esqueci minha senha</a></span> -->
                                 <div class="form-group">
                                     <p class="text-center m-t-xs text-sm">Ainda não tem conta?</p>
                                     <a href="<?= base_url('cadastre-se'); ?>" button type="button" class="btn btn-warning"> Criar uma conta </a></button>

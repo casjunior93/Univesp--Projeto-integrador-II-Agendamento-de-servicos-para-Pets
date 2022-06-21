@@ -42,8 +42,9 @@ $routes->post('login/salvar', 'Auth::salvar');
 $routes->post('login/logar', 'Auth::logar');
 $routes->get('login/sair', 'Auth::sair');
 $routes->get('cadastre-se', 'Auth::registro');
-$routes->get('animais-adocao', 'Listagem::listaAnimais');
-$routes->get('clinicas', 'Listagem::listaClinicas');
+$routes->get('animais-adocao', 'Animais::listaAnimais');
+$routes->get('clinicas', 'Clinicas::listaClinicas');
+$routes->post('animais/salvar', 'Animais::salvar');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {

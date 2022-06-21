@@ -17,9 +17,13 @@ class Dash extends BaseController
     $id_usuario_logado = session()->get('loggedUser');
     $info_usuario = $userModel->find($id_usuario_logado);
 
+    $animalModel = new \App\Models\AnimalModel();
+    $info_animais = $animalModel->getAnimaisPorIdUsuario($id_usuario_logado);
+
     $dados = [
-      'title' => 'Dashboard',
-      'info_usuario' => $info_usuario
+      'title' => 'Base do Dashboard',
+      'info_usuario' => $info_usuario,
+      'info_animais' => $info_animais
     ];
 
     return view('dash/dashboard', $dados);

@@ -97,6 +97,12 @@ class Auth extends BaseController
         'errors' => [
           'required' => 'Campo telefone não pode ficar vazio'
         ]
+      ],
+      'sobre-clinica' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Campo sobre não pode ficar vazio'
+        ]
       ]
     ]);
 
@@ -115,6 +121,7 @@ class Auth extends BaseController
       $complemento = $this->request->getPost('complemento');
       $responsavel = $this->request->getPost('responsavel');
       $telefone = $this->request->getPost('telefone');
+      $descricao = $this->request->getPost('sobre-clinica');
 
       $values = [
         'nome' => $nome,
@@ -126,7 +133,8 @@ class Auth extends BaseController
         'estado' => $estado,
         'complemento' => $complemento,
         'responsavel' => $responsavel,
-        'telefone' => $telefone
+        'telefone' => $telefone,
+        'descricao' => $descricao
       ];
 
       $userModel = new \App\Models\UserModel();

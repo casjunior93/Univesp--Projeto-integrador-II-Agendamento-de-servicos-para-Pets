@@ -54,60 +54,41 @@
 
     <section class="listagem-section">
       <ul class="list-group lista-animais">
-        <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
-          <div class="d-flex">
-            <div class="img-animal col-2 d-flex  justify-content-center">
-              <img src="https://conteudo.imguol.com.br/c/entretenimento/eb/2022/03/23/cachorro-da-raca-lulu-da-pomeramia-1648065976007_v2_3x4.jpg" alt="Foto do animal Pingo para adoção." height="120">
-            </div>
-            <div class="dados-animal col-10 d-flex align-items-center">
-              <div class="conteudo col-12">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Pingo</h5>
-                  <small class="badge bg-warning text-black">3 anos</small>
-                </div>
-                <div class="d-flex w-100 justify-content-between pt-2">
-                  <div class="texto">
-                    <p class="mb-1"><strong>Sobre:</strong> Muito dócil. Foi encontrado abandonado em um terreno baldio quando filhotinho.</p>
-                    <p class="mb-1"><strong>Vacinas:</strong> Vacinado para raiva e gripe canina.</p>
-                    <p class="mb-1"><strong>Local para adoção:</strong> Clínica Anjos de Patas</p>
+        <?php
+        $qtde_animais = count($info_animais);
+        if ($qtde_animais == 0) {
+          echo '<h3>Nenhum animal cadastrado ainda.</h3>';
+        }
+        ?>
+        <?php foreach ($info_animais as $animal) { ?>
+          <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
+            <div class="d-flex">
+              <div class="img-animal col-2 d-flex  justify-content-center">
+                <img src="https://conteudo.imguol.com.br/c/entretenimento/eb/2022/03/23/cachorro-da-raca-lulu-da-pomeramia-1648065976007_v2_3x4.jpg" alt="Foto do animal Pingo para adoção." height="120">
+              </div>
+              <div class="dados-animal col-10 d-flex align-items-center">
+                <div class="conteudo col-12">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><?= $animal['nome']; ?></h5>
+                    <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
                   </div>
-                  <div class="botao d-flex align-items-end">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-1">
-                      Adotar
-                    </button>
+                  <div class="d-flex w-100 justify-content-between pt-2">
+                    <div class="texto">
+                      <p class="mb-1"><strong>Sobre:</strong> <?= $animal['sobre']; ?></p>
+                      <p class="mb-1"><strong>Vacinas:</strong> <?= $animal['vacinas']; ?></p>
+                      <p class="mb-1"><strong>Local para adoção:</strong> <?= $animal['nome_usuario']; ?></p>
+                    </div>
+                    <div class="botao d-flex align-items-end">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-1">
+                        Adotar
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
-          <div class="d-flex">
-            <div class="img-animal col-2 d-flex  justify-content-center">
-              <img src="https://seres.vet/blog/wp-content/uploads/2021/04/castracao-de-cachorro-femea.jpg" alt="Foto do animal Estrela para adoção." height="120">
-            </div>
-            <div class="dados-animal col-10 d-flex align-items-center">
-              <div class="conteudo col-12">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Estrela</h5>
-                  <small class="badge bg-warning text-black">1 ano</small>
-                </div>
-                <div class="d-flex w-100 justify-content-between pt-2">
-                  <div class="texto">
-                    <p class="mb-1"><strong>Sobre:</strong> Muito dócil e gosta de brincar bastante. Infelizmente foi abandonada na clínica Anjo de Patas.</p>
-                    <p class="mb-1"><strong>Vacinas:</strong> Carteira de vacinação completa.</p>
-                    <p class="mb-1"><strong>Local para adoção:</strong> Clínica Anjos de Patas</p>
-                  </div>
-                  <div class="botao d-flex align-items-end">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-2">
-                      Adotar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+          </li>
+        <?php } ?>
       </ul>
     </section>
 
