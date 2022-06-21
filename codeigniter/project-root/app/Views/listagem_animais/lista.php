@@ -64,7 +64,7 @@
           <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
             <div class="d-flex">
               <div class="img-animal col-2 d-flex  justify-content-center">
-                <img src="https://conteudo.imguol.com.br/c/entretenimento/eb/2022/03/23/cachorro-da-raca-lulu-da-pomeramia-1648065976007_v2_3x4.jpg" alt="Foto do animal Pingo para adoção." height="120">
+                <img src="<?= $animal['img']; ?>" height="120">
               </div>
               <div class="dados-animal col-10 d-flex align-items-center">
                 <div class="conteudo col-12">
