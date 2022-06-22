@@ -8,4 +8,13 @@ class Home extends BaseController
     {
         return view('index');
     }
+
+    public function contato()
+    {
+        $dados = [
+            "title" => "Contato"
+        ];
+
+        return view('contato', $dados);
+    }
 }

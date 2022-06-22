@@ -32,10 +32,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Mascote Web</a></li>
-          <li class="nav-item"><a href="<?= base_url('animais-adocao'); ?>" class="nav-link" href="#portfolio">Animais para adoção </a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">Sou Clínica / Hospital</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+          <li class="nav-item"><a href="<?= base_url('animais-adocao'); ?>" class="nav-link" href="#portfolio">Adote! </a></li>
+          <li class="nav-item"><a href="<?= base_url('clinicas'); ?>" class="nav-link" href="#about">Clínicas e Veterinários</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li> -->
+          <li class="nav-item"><a href="<?= base_url('contato'); ?>" class="nav-link" href="#contact">Contato</a></li>
           <a href="<?= base_url('entre-cadastre-se'); ?>" type="button" class="btn btn-warning"> Entrar </a>
         </ul>
       </div>
@@ -44,7 +44,7 @@
   <!-- Masthead-->
   <header class="masthead">
     <div class="container">
-      <h1>Clínicas e Pet Shops</h1>
+      <h1>Clínicas e Veterinários</h1>
     </div>
   </header>
 
@@ -80,11 +80,12 @@
                     <div class="texto">
                       <p class="mb-1"><strong>Sobre:</strong> <?= $usuario['descricao']; ?></p>
                       <p class="mb-1"><strong>Endereço:</strong> <?= $usuario['rua']; ?>, <?= $usuario['cidade']; ?>-<?= $usuario['estado']; ?></p>
+                      <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
                     </div>
                     <div class="botao d-flex align-items-start">
-                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
+                      <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
                         Fazer orçamento
-                      </button>
+                      </button> -->
                     </div>
                   </div>
                 </div>

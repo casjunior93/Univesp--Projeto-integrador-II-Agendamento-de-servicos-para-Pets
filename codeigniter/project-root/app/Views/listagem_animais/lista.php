@@ -32,10 +32,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Mascote Web</a></li>
-          <li class="nav-item"><a href="<?= base_url('animais-adocao'); ?>" class="nav-link" href="#portfolio">Animais para adoção </a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">Sou Clínica / Hospital</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+          <li class="nav-item"><a href="<?= base_url('animais-adocao'); ?>" class="nav-link" href="#portfolio">Adote! </a></li>
+          <li class="nav-item"><a href="<?= base_url('clinicas'); ?>" class="nav-link" href="#about">Clínicas e Veterinários</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#team">Sobre</a></li> -->
+          <li class="nav-item"><a href="<?= base_url('contato'); ?>" class="nav-link" href="#contact">Contato</a></li>
           <a href="<?= base_url('entre-cadastre-se'); ?>" type="button" class="btn btn-warning"> Entrar </a>
         </ul>
       </div>
