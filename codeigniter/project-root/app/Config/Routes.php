@@ -44,10 +44,14 @@ $routes->get('login/sair', 'Auth::sair');
 $routes->get('cadastre-se', 'Auth::registro');
 $routes->get('animais-adocao', 'Animais::listaAnimais');
 $routes->get('clinicas', 'Clinicas::listaClinicas');
-$routes->post('animais/salvar', 'Animais::salvar');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
+
+
+    $routes->post('animais/salvar', 'Animais::salvar');
+    $routes->post('animais/marcar-adotado', 'Animais::marcarAdotado');
+    $routes->post('animais/excluir', 'Animais::excluirAnimal');
 
     //Luciana: Rotas de área logada
 

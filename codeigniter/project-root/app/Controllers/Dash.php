@@ -20,10 +20,30 @@ class Dash extends BaseController
     $animalModel = new \App\Models\AnimalModel();
     $info_animais = $animalModel->getAnimaisPorIdUsuario($id_usuario_logado);
 
+    //contagens
+    $qtde_animais = count($info_animais);
+
+    $qtde_animais_disponiveis = 0;
+    foreach ($info_animais as $animal) {
+      if ($animal['disponivel'] == 1) {
+        $qtde_animais_disponiveis = $qtde_animais_disponiveis + 1;
+      }
+    }
+
+    $qtde_animais_adotados = 0;
+    foreach ($info_animais as $animal) {
+      if ($animal['disponivel'] == 0) {
+        $qtde_animais_adotados = $qtde_animais_adotados + 1;
+      }
+    }
+
     $dados = [
       'title' => 'Base do Dashboard',
       'info_usuario' => $info_usuario,
-      'info_animais' => $info_animais
+      'info_animais' => $info_animais,
+      'qtde_animais' => $qtde_animais,
+      'qtde_animais_adotados' => $qtde_animais_adotados,
+      'qtde_animais_disponiveis' => $qtde_animais_disponiveis
     ];
 
     return view('dash/dashboard', $dados);

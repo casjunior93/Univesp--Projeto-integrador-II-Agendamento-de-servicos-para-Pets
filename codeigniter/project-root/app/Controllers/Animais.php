@@ -14,7 +14,7 @@ class Animais extends BaseController
   public function listaAnimais()
   {
     $animalModel = new \App\Models\AnimalModel();
-    $info_animais = $animalModel->getAnimais();
+    $info_animais = $animalModel->getAnimaisDisponiveis();
 
     $dados = [
       'title' => 'Animais para adoção',
@@ -55,7 +55,7 @@ class Animais extends BaseController
     ]);
 
     if (!$validation) {
-      return view('auth/cadastre-se', ['validation' => $this->validator]);
+      return view('dash/dashboard', ['validation' => $this->validator]);
     } else {
 
       $userModel = new \App\Models\UserModel();
@@ -82,13 +82,55 @@ class Animais extends BaseController
       $animalModel = new \App\Models\AnimalModel();
       $query = $animalModel->insert($values);
       if (!$query) {
-        return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
+        return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados')->with('nome', $info_usuario['nome']);;
       } else {
         $id_animal = $animalModel->insertID();
 
         //return redirect()->to('/dashboard');
         return redirect()->to('/dashboard')->with('success', $nome . ' foi registrado com sucesso!')->with('nome', $info_usuario['nome']);
       }
+    }
+  }
+
+  public function marcarAdotado()
+  {
+
+    $userModel = new \App\Models\UserModel();
+    $id_usuario_logado = session()->get('loggedUser');
+    $info_usuario = $userModel->find($id_usuario_logado);
+
+    //id do animal
+    $id_animal = $this->request->getPost('id-animal');
+
+    $animalModel = new \App\Models\AnimalModel();
+
+    $query = $animalModel->atualizaAnimalParaAdotado($id_animal);
+
+    if (!$query) {
+      return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados')->with('nome', $info_usuario['nome']);
+    } else {
+      return redirect()->to('/dashboard')->with('success', 'Animal marcado como adotado com sucesso!')->with('nome', $info_usuario['nome']);
+    }
+  }
+
+  public function excluirAnimal()
+  {
+
+    $userModel = new \App\Models\UserModel();
+    $id_usuario_logado = session()->get('loggedUser');
+    $info_usuario = $userModel->find($id_usuario_logado);
+
+    //id do animal
+    $id_animal = $this->request->getPost('id-animal');
+
+    $animalModel = new \App\Models\AnimalModel();
+
+    $query = $animalModel->excluirAnimal($id_animal);
+
+    if (!$query) {
+      return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados')->with('nome', $info_usuario['nome']);
+    } else {
+      return redirect()->to('/dashboard')->with('success', 'Animal excluído com sucesso!')->with('nome', $info_usuario['nome']);
     }
   }
 }
