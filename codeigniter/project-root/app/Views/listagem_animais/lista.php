@@ -104,7 +104,7 @@
           <form>
             <div class="modal-header">
               <h5 class="modal-title" id="animalLabel-<?= $animal['id']; ?>">Adotar Pingo</h5>
-              <p>Entre em contato com a Clínica <strong><?= $animal['nome_usuario']; ?></strong></p>
+              <p>Entre em contato com <strong><?= $animal['nome_usuario']; ?></strong></p>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
