@@ -63,11 +63,11 @@
         <?php foreach ($info_animais as $animal) { ?>
           <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
             <div class="d-flex">
-              <div class="img-animal col-2 d-flex  justify-content-start">
-                <img src="<?= $animal['img']; ?>" alt="Foto do animal <?= $animal['nome']; ?> para adoção." style="max-height: 120px;max-width: 120px;">
+              <div class="img-animal col-2 d-flex  justify-content-center">
+                <img src="<?= $animal['img']; ?>" alt="Foto do animal <?= $animal['nome']; ?> para adoção." class="img-fluid" style="border-radius: 10px; max-height: 150px;">
               </div>
               <div class="dados-animal col-10 d-flex align-items-center">
-                <div class="conteudo col-12">
+                <div class="conteudo col-12 p-3">
                   <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1"><?= $animal['nome']; ?></h5>
                     <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
