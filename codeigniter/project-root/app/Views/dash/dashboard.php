@@ -216,7 +216,7 @@
                                                             <div class="form1 d-flex justify-content-end">
                                                                 <form class="" action="<?= base_url('animais/excluir'); ?>" method="POST">
                                                                     <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
-                                                                    <input type="submit" value="Excluir" onclick="alert('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                    <input type="submit" value="Excluir" onclick="confirm('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -275,7 +275,7 @@
                                                             <div class="form1 d-flex justify-content-end">
                                                                 <form class="" action="<?= base_url('animais/excluir'); ?>" method="POST">
                                                                     <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
-                                                                    <input type="submit" value="Excluir" onclick="alert('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                    <input type="submit" value="Excluir" onclick="confirm('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                 </form>
                                                             </div>
                                                         </div>
