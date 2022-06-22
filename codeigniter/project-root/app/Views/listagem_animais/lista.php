@@ -109,16 +109,20 @@
             <div class="modal-body">
               <p>Entre em contato com <strong><?= $animal['nome_usuario']; ?></strong></p>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+                <label for="nome" class="form-label">Nome<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="Nome" required>
               </div>
               <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone">
+                <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
               </div>
               <div class="mb-3">
-                <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal</label>
-                <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar"></textarea>
+                <label for="telefone" class="form-label">Telefone<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone" required>
+              </div>
+              <div class="mb-3">
+                <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal<span class="text-danger">*</span></label>
+                <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar" required></textarea>
               </div>
             </div>
             <div class="modal-footer">

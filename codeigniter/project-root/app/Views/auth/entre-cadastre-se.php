@@ -67,7 +67,7 @@
                                 <?php endif ?>
                                 <legend>Entrar</legend>
                                 <div class="form-group">
-                                    <label for="username-email">Email</label>
+                                    <label for="username-email">Email<span class="text-danger">*</span></label>
                                     <input value='' id="username-email" placeholder="E-mail" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" required />
                                     <?php
                                     if (isset($validation) && mostra_erro($validation, 'email')) {
@@ -78,7 +78,7 @@
                                     ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Senha</label>
+                                    <label for="password">Senha<span class="text-danger">*</span></label>
                                     <input id="password" value='' placeholder="Senha" type="password" class="form-control" name="senha" minlength="5" maxlength="12" required />
                                     <?php
                                     if (isset($validation) && mostra_erro($validation, 'senha')) {
