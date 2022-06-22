@@ -71,12 +71,12 @@
                                     <label for="esqueci-senha">Informe seu email de cadastro </label> <br> <br>
 
                                     <input value='' id="esqueci-senha" placeholder="Email de recuperação" type="text" class="form-control" name="email" value="<?= set_value('email'); ?>" />
-                                    <span class=" text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
+                                    <span class=" text-danger"><?= isset($validation) ? mostra_erro($validation, 'email') : '' ?></span>
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="password">Senha</label>
                                     <input id="password" value='' placeholder="Password" type="text" class="form-control" name="senha" />
-                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'senha') : '' ?></span>
+                                    <span class="text-danger"><?= isset($validation) ? mostra_erro($validation, 'senha') : '' ?></span>
                                 </div>
                                 
                                 <div class="input-group">
