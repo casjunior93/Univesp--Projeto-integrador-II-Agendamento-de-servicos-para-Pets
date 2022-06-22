@@ -55,9 +55,8 @@
     </header>
 
     <main class="p-5 pt-0">
-        <section class="page-section d-flex justify-content-between">
-            <h3 class="olaUser">Olá, <?= isset($info_usuario['nome']) ? $info_usuario['nome'] : session()->getFlashdata('nome'); ?>!</h3>
-            <a href="<?= base_url('login/sair'); ?>">Sair</a>
+        <section class="d-flex justify-content-between">
+            <h3 class="olaUser text-black">Olá, <?= isset($info_usuario['nome']) ? $info_usuario['nome'] : session()->getFlashdata('nome'); ?>!</h3>
         </section>
 
         <!-- Mensagens de erro -->
@@ -160,47 +159,137 @@
         </section>
 
         <!-- Listagem animais -->
-
         <section class="listagem-section">
-            <ul class="list-group lista-animais">
-                <?php
-                $qtde_animais = count($info_animais);
-                if ($qtde_animais == 0) {
-                    echo '<h3>Nenhum animal cadastrado ainda.</h3>';
-                }
-                ?>
-                <?php foreach ($info_animais as $animal) { ?>
-                    <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
-                        <div class="d-flex">
-                            <div class="img-animal col-2 d-flex  justify-content-center">
-                                <img src="<?= $animal['img']; ?>" alt="Foto do animal Pingo para adoção." height="120">
-                            </div>
-                            <div class="dados-animal col-10 d-flex align-items-center">
-                                <div class="conteudo col-12">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1"><?= $animal['nome']; ?></h5>
-                                        <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
-                                    </div>
-                                    <div class="d-flex w-100 justify-content-between pt-2">
-                                        <div class="texto">
-                                            <p class="mb-1"><strong>Sobre:</strong> <?= $animal['sobre']; ?></p>
-                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $animal['vacinas']; ?></p>
-                                        </div>
-                                        <div class="botao d-grid">
-                                            <button type="button" class="btn btn-warning" style="margin-bottom: 10px;">
-                                                Marcar como adotado
-                                            </button>
-                                            <button type="button" class="btn btn-warning">
-                                                Excluir
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                <?php } ?>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-disponivel" type="button" role="tab" aria-controls="tab-disponivel" aria-selected="true"><span class="text-black">Disponíveis</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab-adotado" type="button" role="tab" aria-controls="tab-adotado" aria-selected="false"><span class="text-black">Adotados</span></button>
+                </li>
             </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab-disponivel" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+                    <ul class="list-group lista-animais">
+                        <?php
+                        $qtde_animais = count($info_animais);
+                        if ($qtde_animais == 0) {
+                            echo '<h3>Nenhum animal cadastrado ainda.</h3>';
+                        }
+                        ?>
+                        <?php foreach ($info_animais as $animal) { ?>
+                            <?php if ($qtde_animais_disponiveis == 0) {
+                                echo '<h3>Nenhum animal disponível.</h3>';
+                            } else {
+                                if ($animal['disponivel'] == 1) { ?>
+
+                                    <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
+                                        <div class="d-flex">
+                                            <div class="img-animal col-2 d-flex  justify-content-start">
+                                                <img src="<?= $animal['img']; ?>" alt="Foto do animal <?= $animal['nome']; ?> para adoção." style="max-height: 120px;max-width: 120px;">
+                                            </div>
+                                            <div class="dados-animal col-10 d-flex align-items-center">
+                                                <div class="conteudo col-12">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-1"><?= $animal['nome']; ?></h5>
+                                                        <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
+                                                    </div>
+                                                    <div class="d-flex w-100 justify-content-between pt-2">
+                                                        <div class="texto col-9">
+                                                            <p class="mb-1"><strong>Sobre:</strong> <?= $animal['sobre']; ?></p>
+                                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $animal['vacinas']; ?></p>
+                                                        </div>
+                                                        <div class="botao d-grid col-3">
+                                                            <div class="form1 d-flex justify-content-end">
+                                                                <?php
+                                                                if (intval($animal['disponivel']) == 0) {
+                                                                    echo '<p class="btn btn-primary">Animal adotado!</p>';
+                                                                } else {
+                                                                ?>
+                                                                    <form action="<?= base_url('animais/marcar-adotado'); ?>" method="POST">
+                                                                        <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
+                                                                        <input type="submit" value="Marcar como adotado" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                    </form>
+                                                                <?php } ?>
+                                                            </div>
+                                                            <div class="form1 d-flex justify-content-end">
+                                                                <form class="" action="<?= base_url('animais/excluir'); ?>" method="POST">
+                                                                    <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
+                                                                    <input type="submit" value="Excluir" onclick="alert('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                        <?php }
+                            }
+                        } ?>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="tab-adotado" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+                    <ul class="list-group lista-animais">
+                        <?php
+                        if ($qtde_animais == 0) {
+                            echo '<h3>Nenhum animal cadastrado ainda.</h3>';
+                        }
+                        ?>
+                        <?php foreach ($info_animais as $animal) { ?>
+                            <?php if ($qtde_animais_adotados == 0) {
+                                echo '<h3>Nenhum animal adotado.</h3>';
+                            } else {
+                                if ($animal['disponivel'] == 0) { ?>
+                                    <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
+                                        <div class="d-flex">
+                                            <div class="img-animal col-2 d-flex  justify-content-start">
+                                                <img src="<?= $animal['img']; ?>" alt="Foto do animal <?= $animal['nome']; ?> para adoção." style="max-height: 120px;max-width: 120px;">
+                                            </div>
+                                            <div class="dados-animal col-10 d-flex align-items-center">
+                                                <div class="conteudo col-12">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-1"><?= $animal['nome']; ?></h5>
+                                                        <small class="badge bg-warning text-black"><?= $animal['idade']; ?> ano(s)</small>
+                                                    </div>
+                                                    <div class="d-flex w-100 justify-content-between pt-2">
+                                                        <div class="texto col-9">
+                                                            <p class="mb-1"><strong>Sobre:</strong> <?= $animal['sobre']; ?></p>
+                                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $animal['vacinas']; ?></p>
+                                                        </div>
+                                                        <div class="botao d-grid col-3">
+                                                            <div class="form1 d-flex justify-content-end">
+                                                                <?php
+                                                                if (intval($animal['disponivel']) == 0) {
+                                                                    echo '<p class="btn btn-primary">Animal adotado!</p>';
+                                                                } else {
+                                                                ?>
+                                                                    <form action="<?= base_url('animais/marcar-adotado'); ?>" method="POST">
+                                                                        <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
+                                                                        <input type="submit" value="Marcar como adotado" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                    </form>
+                                                                <?php } ?>
+                                                            </div>
+                                                            <div class="form1 d-flex justify-content-end">
+                                                                <form class="" action="<?= base_url('animais/excluir'); ?>" method="POST">
+                                                                    <input type="hidden" name="id-animal" value="<?= $animal['id']; ?>">
+                                                                    <input type="submit" value="Excluir" onclick="alert('Tem certeza que quer excluir <?= $animal['nome']; ?>?')" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                        <?php }
+                            }
+                        } ?>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Fim da listagem animais -->
