@@ -79,7 +79,7 @@
                       <p class="mb-1"><strong>Local para adoção:</strong> <?= $animal['nome_usuario']; ?></p>
                     </div>
                     <div class="botao d-flex align-items-end">
-                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-1">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#animal-<?= $animal['id']; ?>">
                         Adotar
                       </button>
                     </div>
@@ -97,68 +97,39 @@
   </main>
 
   <!-- Aqui será renderizado os modais -->
-  <div class="modal fade" id="animal-1" tabindex="-1" aria-labelledby="animalLabel-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form>
-          <div class="modal-header">
-            <h5 class="modal-title" id="animalLabel-1">Adotar Pingo</h5>
-            <p>Entre em contato com a Clínica <strong>Anjos de Patas</strong></p>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+  <?php foreach ($info_animais as $animal) { ?>
+    <div class="modal fade" id="animal-<?= $animal['id']; ?>" tabindex="-1" aria-labelledby="animalLabel-<?= $animal['id']; ?>" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <h5 class="modal-title" id="animalLabel-<?= $animal['id']; ?>">Adotar Pingo</h5>
+              <p>Entre em contato com a Clínica <strong><?= $animal['nome_usuario']; ?></strong></p>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="mb-3">
-              <label for="telefone" class="form-label">Telefone</label>
-              <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+              </div>
+              <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone">
+              </div>
+              <div class="mb-3">
+                <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal</label>
+                <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar"></textarea>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal</label>
-              <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar"></textarea>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary">Enviar pedido de adoção</button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Enviar pedido de adoção</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="modal fade" id="animal-2" tabindex="-1" aria-labelledby="animalLabel-2" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form>
-          <div class="modal-header">
-            <h5 class="modal-title" id="animalLabel-2">Adotar Estrela</h5>
-            <p>Entre em contato com a Clínica <strong>Anjos de Patas</strong></p>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
-            </div>
-            <div class="mb-3">
-              <label for="telefone" class="form-label">Telefone</label>
-              <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone">
-            </div>
-            <div class="mb-3">
-              <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal</label>
-              <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Enviar pedido de adoção</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+  <?php } ?>
   <!-- Aqui será renderizado os modais -->
 
   <!-- Footer-->
