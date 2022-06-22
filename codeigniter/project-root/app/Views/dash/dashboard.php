@@ -178,10 +178,11 @@
                             echo '<h3>Nenhum animal cadastrado ainda.</h3>';
                         }
                         ?>
-                        <?php foreach ($info_animais as $animal) { ?>
-                            <?php if ($qtde_animais_disponiveis == 0) {
-                                echo '<h3>Nenhum animal disponível.</h3>';
-                            } else {
+                        <?php
+                        if ($qtde_animais_disponiveis == 0) {
+                            echo '<h3>Nenhum animal disponível.</h3>';
+                        } else {
+                            foreach ($info_animais as $animal) {
                                 if ($animal['disponivel'] == 1) { ?>
 
                                     <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
@@ -238,11 +239,11 @@
                             echo '<h3>Nenhum animal cadastrado ainda.</h3>';
                         }
                         ?>
-                        <?php foreach ($info_animais as $animal) { ?>
-                            <?php if ($qtde_animais_adotados == 0) {
-                                echo '<h3>Nenhum animal adotado.</h3>';
-                            } else {
-                                if ($animal['disponivel'] == 0) { ?>
+                        <?php if ($qtde_animais_adotados == 0) {
+                            echo '<h3>Nenhum animal adotado.</h3>';
+                        } else {
+                            foreach ($info_animais as $animal) { ?>
+                                <?php if ($animal['disponivel'] == 0) { ?>
                                     <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
                                         <div class="d-flex">
                                             <div class="img-animal col-2 d-flex  justify-content-center">
