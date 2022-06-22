@@ -57,7 +57,7 @@
         <?php
         $qtde_animais = count($info_animais);
         if ($qtde_animais == 0) {
-          echo '<h3>Nenhum animal cadastrado ainda.</h3>';
+          echo '<h3>Nenhum animal disponível para adoção.</h3>';
         }
         ?>
         <?php foreach ($info_animais as $animal) { ?>
