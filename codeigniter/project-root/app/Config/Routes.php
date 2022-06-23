@@ -47,6 +47,7 @@ $routes->get('animais-adocao', 'Animais::listaAnimais');
 $routes->get('clinicas', 'Clinicas::listaClinicas');
 $routes->get('/email', 'EnviaEmail::index');
 $routes->post('/envia-emailteste', 'EnviaEmail::enviaEmailTeste');
+$routes->post('/salva-contato', 'Mensagens::salvar');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
@@ -56,6 +57,8 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
     $routes->post('animais/marcar-adotado', 'Animais::marcarAdotado');
     $routes->post('animais/excluir', 'Animais::excluirAnimal');
     $routes->get('contatos-adocao', 'Dash::contatosAdocao');
+    $routes->post('mensagens/marcar-respondida', 'Mensagens::marcarRespondida');
+    $routes->post('mensagens/excluir', 'Mensagens::excluirMensagem');
 
     //Luciana: Rotas de área logada
 

@@ -9,7 +9,7 @@ class MensagemModel extends Model
 
   protected $table = 'mensagens';
   protected $primayKey = 'id';
-  protected $allowedFields = ['nome', 'email', 'telefone', 'mensagem', 'respondida'];
+  protected $allowedFields = ['nome', 'email', 'telefone', 'mensagem', 'respondida', 'id_usuario', 'nome_animal'];
 
   public function getMsgmPorIdUsuario($id)
   {
@@ -22,15 +22,15 @@ class MensagemModel extends Model
   public function atualizaMsgParaRespondido($id)
   {
     $db = db_connect();
-    $sql = 'UPDATE mensagens SET respondida = 0 WHERE id = ' . $id;
+    $sql = 'UPDATE mensagens SET respondida = 1 WHERE id = ' . $id;
     $resultado = $db->query($sql);
     return $resultado;
   }
 
-  public function excluirAnimal($id)
+  public function excluirMensagem($id)
   {
     $db = db_connect();
-    $sql = 'DELETE FROM animais WHERE id = ' . $id;
+    $sql = 'DELETE FROM mensagens WHERE id = ' . $id;
     $resultado = $db->query($sql);
     return $resultado;
   }

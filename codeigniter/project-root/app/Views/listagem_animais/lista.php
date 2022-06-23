@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title><?= $title; ?> | Mascote web</title>
+  <title>Animais para adoção | Mascote web</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="<?= base_url('/'); ?>/assets/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
@@ -49,6 +49,15 @@
   </header>
 
   <main class="p-5 pt-0">
+    <!-- Mensagens de erro -->
+    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+      <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>
+    <?php endif ?>
+
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+      <div class='alert alert-success'><?= session()->getFlashdata('success'); ?></div>
+    <?php endif ?>
+    <!-- Fim de mensagens de erro -->
 
     <!-- Conteudo visível relevante vai dentro da main -->
 
@@ -101,7 +110,8 @@
     <div class="modal fade" id="animal-<?= $animal['id']; ?>" tabindex="-1" aria-labelledby="animalLabel-<?= $animal['id']; ?>" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form>
+          <form class="" action="<?= base_url('salva-contato'); ?>" method="POST">
+            <?= csrf_field(); ?>
             <div class="modal-header">
               <h5 class="modal-title" id="animalLabel-<?= $animal['id']; ?>">Adotar <?= $animal['nome']; ?></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -121,13 +131,14 @@
                 <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone" required>
               </div>
               <div class="mb-3">
-                <label for="porque-adotar" class="form-label">Fale sobre você e sobre porque você quer adotar o animal<span class="text-danger">*</span></label>
-                <textarea class="form-control" aria-label="porque-adotar" id="porque-adotar" name="porque-adotar" required></textarea>
+                <label for="mensagem" class="form-label">Fale sobre você e sobre porque você quer adotar o animal<span class="text-danger">*</span></label>
+                <textarea class="form-control" aria-label="mensagem" id="mensagem" name="mensagem" maxlength="255" required></textarea>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar pedido de adoção</button>
+              <div class="mb-3">
+                <input type="hidden" name="id_usuario" value="<?= $animal['id_usuario']; ?>">
+                <input type="hidden" name="nome_animal" value="<?= $animal['nome']; ?>">
+                <input type="submit" class="btn btn-warning" value="Enviar contato">
+              </div>
             </div>
           </form>
         </div>

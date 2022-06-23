@@ -63,14 +63,14 @@ class Dash extends BaseController
 
     $qtde_msgs_disponiveis = 0;
     foreach ($info_msgs as $msg) {
-      if ($msg['respondida'] == 1) {
+      if ($msg['respondida'] == 0) {
         $qtde_msgs_disponiveis = $qtde_msgs_disponiveis + 1;
       }
     }
 
     $qtde_msgs_adotados = 0;
     foreach ($info_msgs as $animal) {
-      if ($animal['respondida'] == 0) {
+      if ($animal['respondida'] == 1) {
         $qtde_msgs_adotados = $qtde_msgs_adotados + 1;
       }
     }

@@ -182,7 +182,7 @@
                             echo '<h3>Nenhuma mensagem ainda.</h3>';
                         } else {
                             foreach ($info_msgs as $msgs) {
-                                if ($msgs['disponivel'] == 1) { ?>
+                                if ($msgs['respondida'] == 0) { ?>
 
                                     <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
                                         <div class="d-flex">
@@ -191,21 +191,38 @@
                                                     <div class="d-flex w-100 justify-content-between pt-2">
                                                         <div class="texto col-9">
                                                             <p class="mb-1"><strong>Nome:</strong> <?= $msgs['nome']; ?></p>
+                                                            <p class="mb-1"><strong>Animal:</strong> <?= $msgs['nome_animal']; ?></p>
                                                             <p class="mb-1"><strong>Email:</strong> <?= $msgs['email']; ?></p>
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
                                                             <p class="mb-1"><strong>Mensagem:</strong> <?= $msgs['mensagem']; ?></p>
                                                         </div>
                                                         <div class="botao d-grid col-3">
-                                                            <div class="form1 d-flex justify-content-end">
+                                                            <div class="form1 d-grid">
                                                                 <?php
-                                                                if (intval($msgs['disponivel']) == 0) {
-                                                                    echo '<p class="btn btn-primary">Respondido</p>';
-                                                                } else {
+                                                                if (intval($msgs['respondida']) == 1) { ?>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <p class="btn btn-primary">Respondido!</p>
+                                                                    </div>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
+                                                                <?php } else {
                                                                 ?>
-                                                                    <form action="<?= base_url('animais/marcar-adotado'); ?>" method="POST">
-                                                                        <input type="hidden" name="id-animal" value="<?= $msgs['id']; ?>">
-                                                                        <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
-                                                                    </form>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form action="<?= base_url('mensagens/marcar-respondida'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
                                                                 <?php } ?>
                                                             </div>
                                                         </div>
@@ -226,32 +243,46 @@
                             echo '<h3>Nenhuma mensagem respondida.</h3>';
                         } else {
                             foreach ($info_msgs as $msgs) { ?>
-                                <?php if ($msgs['disponivel'] == 0) { ?>
+                                <?php if ($msgs['respondida'] == 1) { ?>
                                     <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
                                         <div class="d-flex">
-                                            <div class="img-animal col-2 d-flex  justify-content-center">
-                                                <img src="<?= $msgs['img']; ?>" alt="Foto do animal <?= $msgs['nome']; ?> para adoção." class="img-fluid" style="border-radius: 10px; max-height: 150px;">
-                                            </div>
-                                            <div class="dados-animal col-10 d-flex align-items-center">
+                                            <div class="dados-animal col-12 d-flex align-items-center">
                                                 <div class="conteudo col-12 p-3">
                                                     <div class="d-flex w-100 justify-content-between pt-2">
                                                         <div class="texto col-9">
                                                             <p class="mb-1"><strong>Nome:</strong> <?= $msgs['nome']; ?></p>
+                                                            <p class="mb-1"><strong>Animal:</strong> <?= $msgs['nome_animal']; ?></p>
                                                             <p class="mb-1"><strong>Email:</strong> <?= $msgs['email']; ?></p>
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
                                                             <p class="mb-1"><strong>Mensagem:</strong> <?= $msgs['mensagem']; ?></p>
                                                         </div>
                                                         <div class="botao d-grid col-3">
-                                                            <div class="form1 d-flex justify-content-end">
+                                                            <div class="form1 d-grid">
                                                                 <?php
-                                                                if (intval($msgs['disponivel']) == 0) {
-                                                                    echo '<p class="btn btn-primary">Respondido</p>';
-                                                                } else {
+                                                                if (intval($msgs['respondida']) == 1) { ?>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <p class="btn btn-primary">Respondido!</p>
+                                                                    </div>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
+                                                                <?php } else {
                                                                 ?>
-                                                                    <form action="<?= base_url('animais/marcar-adotado'); ?>" method="POST">
-                                                                        <input type="hidden" name="id-animal" value="<?= $msgs['id']; ?>">
-                                                                        <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
-                                                                    </form>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form action="<?= base_url('mensagens/marcar-respondida'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="form1 d-flex justify-content-end">
+                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                            <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
+                                                                            <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                        </form>
+                                                                    </div>
                                                                 <?php } ?>
                                                             </div>
                                                         </div>
