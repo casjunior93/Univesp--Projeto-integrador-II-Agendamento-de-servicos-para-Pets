@@ -50,7 +50,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Solução para Clínicas Veterinárias</div>
+            <div class="masthead-subheading">Soluções para Clínicas Veterinárias</div>
             <div class="masthead-heading text-uppercase">Mascote Web </div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Saiba mais</a>
         </div>
