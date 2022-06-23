@@ -14,7 +14,9 @@
     }
 }
 
-.masthead-subheading {
-
-    font-size: 22 px;
+header.masthead .masthead-subheading {
+    font-size: 1.25 rem;
+    font-style: italic;
+    line-height: 2.25 rem;
+    margin-bottom: 2 rem;
 }
