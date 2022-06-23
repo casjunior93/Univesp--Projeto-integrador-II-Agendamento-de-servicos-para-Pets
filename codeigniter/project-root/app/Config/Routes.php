@@ -55,12 +55,12 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
     $routes->post('animais/salvar', 'Animais::salvar');
     $routes->post('animais/marcar-adotado', 'Animais::marcarAdotado');
     $routes->post('animais/excluir', 'Animais::excluirAnimal');
+    $routes->get('contatos-adocao', 'Dash::contatosAdocao');
 
     //Luciana: Rotas de área logada
 
     //Pro dashboard chama os metodos do controller Dash
     $routes->get('dashboard', 'Dash::index');
-    $routes->get('base-dash', 'Dash::baseDashboard');
 
     //Luciana: Fim de rotas de área logada
 });
