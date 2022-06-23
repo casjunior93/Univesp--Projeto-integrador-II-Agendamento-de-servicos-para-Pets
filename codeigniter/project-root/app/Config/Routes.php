@@ -45,6 +45,8 @@ $routes->get('login/sair', 'Auth::sair');
 $routes->get('cadastre-se', 'Auth::registro');
 $routes->get('animais-adocao', 'Animais::listaAnimais');
 $routes->get('clinicas', 'Clinicas::listaClinicas');
+$routes->get('/email', 'EnviaEmail::index');
+$routes->post('/envia-emailteste', 'EnviaEmail::enviaEmailTeste');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
