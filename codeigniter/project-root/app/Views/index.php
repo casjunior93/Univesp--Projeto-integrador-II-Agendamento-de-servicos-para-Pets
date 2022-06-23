@@ -50,16 +50,16 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Loren Ipsum</div>
-            <div class="masthead-heading text-uppercase">Dollor Sit Amet </div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            <div class="masthead-subheading">Solução para Clínicas Veterinárias</div>
+            <div class="masthead-heading text-uppercase">Mascote Web </div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Saiba mais</a>
         </div>
     </header>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Conheça,colabore,faça parte!</h2>
+                <h2 class="section-heading text-uppercase">Conheça! Faça parte!</h2>
                 <h3 class="section-subheading text-muted">Conheça o nosso jeito de colaborar com sua clínica veterinária.</h3>
             </div>
             <div class="row text-center">
