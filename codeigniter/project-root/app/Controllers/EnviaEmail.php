@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\FormModel;
 use CodeIgniter\Controller;
 
 class EnviaEmail extends Controller
@@ -14,9 +13,9 @@ class EnviaEmail extends Controller
 
   function enviaEmailTeste()
   {
-    $to = $this->request->getPost('mailTo');
-    $subject = $this->request->getPost('subject');
-    $message = $this->request->getPost('message');
+    $to = $this->request->getVar('mailTo');
+    $subject = $this->request->getVar('subject');
+    $message = $this->request->getVar('message');
 
     $email = \Config\Services::email();
     $email->setTo($to);
