@@ -69,7 +69,9 @@
                         <i class="fas fa-calendar fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Agendamento Inteligente</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Agendamento dinãmico de retirada, disponibilidade de animais para adoção usando Lorem Ipsum dollor sit 
+                        (deixar para pós agenda)
+                    </p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -266,8 +268,8 @@
     <section class="page-section bg-light" id="team">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Solucione de forma prática a questão do abandono em sua Clínica</h2>
+                <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4">
