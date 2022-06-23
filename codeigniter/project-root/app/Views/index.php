@@ -30,7 +30,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/logo.png" alt="Mascote Web" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -50,16 +50,16 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Loren Ipsum</div>
-            <div class="masthead-heading text-uppercase">Dollor Sit Amet </div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            <div class="masthead-subheading">Soluções para Clínicas Veterinárias</div>
+            <div class="masthead-heading text-uppercase">Mascote Web </div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Saiba mais</a>
         </div>
     </header>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Conheça,colabore,faça parte!</h2>
+                <h2 class="section-heading text-uppercase">Conheça! Faça parte!</h2>
                 <h3 class="section-subheading text-muted">Conheça o nosso jeito de colaborar com sua clínica veterinária.</h3>
             </div>
             <div class="row text-center">
@@ -69,7 +69,9 @@
                         <i class="fas fa-calendar fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Agendamento Inteligente</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Agendamento dinãmico de retirada, disponibilidade de animais para adoção usando Lorem Ipsum dollor sit 
+                        (deixar para pós agenda)
+                    </p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -94,7 +96,7 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Adote com um de nossos parceiros veterinários</h2>
+                <h2 class="section-heading text-uppercase">Adotados do mês de junho por meio do Mascote Web</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row">
@@ -192,7 +194,7 @@
         </div>
     </section>
     <!-- About-->
-    <section class="page-section" id="about">
+   <!-- <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Sobre nós</h2>
@@ -260,13 +262,14 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </section> 
+-->
     <!-- Team-->
     <section class="page-section bg-light" id="team">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Solucione de forma prática a questão do abandono em sua Clínica</h2>
+                <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4">
