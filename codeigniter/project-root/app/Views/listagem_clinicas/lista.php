@@ -154,11 +154,27 @@
                 <div class="col12 d-flex">
                   <div class="col-6">
                     <label for="data" class="form-label">Hora<span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="data" name="hora" aria-describedby="data" required>
+                    <select name="hora" class="form-control" id="">
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="1">13</option>
+                      <option value="2">14</option>
+                      <option value="3">15</option>
+                      <option value="4">16</option>
+                      <option value="5">17</option>
+                      <option value="6">18</option>
+                    </select>
                   </div>
                   <div class="col-6">
                     <label for="data" class="form-label">Minuto<span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="data" name="hora" aria-describedby="data" required>
+                    <select name="minutos" class="form-control" id="">
+                      <option value="30">30</option>
+                      <option value="00">00</option>
+                    </select>
                   </div>
                 </div>
               </div>
