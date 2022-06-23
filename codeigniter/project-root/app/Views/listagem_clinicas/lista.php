@@ -83,9 +83,9 @@
                       <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
                     </div>
                     <div class="botao d-flex align-items-start">
-                      <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
                         Fazer orçamento
-                      </button> -->
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -149,6 +149,18 @@
               <div class="mb-3">
                 <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
                 <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
+              </div>
+              <div class="mb-3">
+                <div class="col12 d-flex">
+                  <div class="col-6">
+                    <label for="data" class="form-label">Hora<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="data" name="hora" aria-describedby="data" required>
+                  </div>
+                  <div class="col-6">
+                    <label for="data" class="form-label">Minuto<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="data" name="hora" aria-describedby="data" required>
+                  </div>
+                </div>
               </div>
               <div class="mb-3">
                 <label for="recados" class="form-label">Recados<span class="text-danger">*</span></label>
