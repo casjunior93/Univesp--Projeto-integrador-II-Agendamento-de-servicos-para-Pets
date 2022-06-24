@@ -273,6 +273,7 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Solucione de forma prática a questão do abandono em sua Clínica</h2>
                 <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura!</h3>
+                <img class="mx-auto rounded-circle" src="assets/img/about/header-login.jpg" alt="..." />
             </div>
             <div class="row">
                 <div class="col-lg-4">
