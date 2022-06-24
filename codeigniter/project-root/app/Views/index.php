@@ -434,10 +434,10 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <h2 class="text-uppercase">Mascote Web</h2>
+                                <p class="item-intro text-muted">Transformando a vida de animais e humanos</p>
                                 <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p>Cadastre sua clínica ou hospital veterinário. Obtenha apoio na divulgação de animais abandonados</p>
                                 <ul class="list-inline">
                                     <li>
                                         <strong>Client:</strong>
