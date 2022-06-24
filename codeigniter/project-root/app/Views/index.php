@@ -419,7 +419,7 @@
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">UNIVESP - Universidade Virtual do Estado de SP - Projeto Integrador</a>
+                    <a class="link-dark text-decoration-none me-3" href="#!">UNIVESP - Universidade Virtual do Estado de SP </a><br></p> Projeto Integrador</p>
                     <a class="link-dark text-decoration-none" href="#!">Termos de uso</a>
                 </div>
             </div>
