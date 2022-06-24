@@ -473,7 +473,7 @@
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
+                               <!-- <ul class="list-inline">
                                     <li>
                                         <strong>Client:</strong>
                                         Explore
@@ -482,10 +482,10 @@
                                         <strong>Category:</strong>
                                         Graphic Design
                                     </li>
-                                </ul>
+                                </ul>-->
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    Fechar
                                 </button>
                             </div>
                         </div>
