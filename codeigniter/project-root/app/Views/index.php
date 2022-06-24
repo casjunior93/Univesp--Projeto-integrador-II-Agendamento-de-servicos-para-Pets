@@ -273,7 +273,7 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Solucione de forma prática a questão do abandono em sua Clínica</h2>
                 <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura!</h3>
-                <img class="mx-auto rounded-circle" src="assets/img/about/header-login.jpg" alt="..." />
+                <img class="rounded-circle" src="assets/img/about/header-login.jpg" alt="..." />
             </div>
             <div class="row">
                 <div class="col-lg-4">
@@ -315,7 +315,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-warning"> Crie sua conta </a></button>
                 </div>
             </div>
         </div>
