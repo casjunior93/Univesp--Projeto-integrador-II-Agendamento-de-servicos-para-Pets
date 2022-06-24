@@ -69,8 +69,8 @@
                         <i class="fas fa-calendar fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Agendamento Inteligente</h4>
-                    <p class="text-muted">Agendamento dinãmico de retirada, disponibilidade de animais para adoção usando Lorem Ipsum dollor sit 
-                        (deixar para pós agenda)
+                    <p class="text-muted">Disponibilize serviços com datas e horários disponíveis de forma rápida e pratica. O seu cliente
+                        poderá agendar de forma eficiente em nossa ferramenta. Tenha acesso a um dashboard exclusivo para melhor visualização                        
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -79,7 +79,9 @@
                         <i class="fas fa-cat fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Solução para abandono</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Sabemos do recorrente abandono de animais em clínicas, hospitais e hospedarias veterináias, por isto, 
+                        disponibilizamos um recurso exclusivo onde você informa dados dos animais disponíveis para adoção
+                    </p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -87,7 +89,7 @@
                         <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Segurança dos seus dados</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted"> Não divulgamos os seus dados para uso comercial, apenas estatísticos. Conte com a segurança Mascote Web!</p>
                 </div>
             </div>
         </div>
@@ -96,9 +98,8 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Adotados do mês de junho por meio do Mascote Web</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
+                <h2 class="section-heading text-uppercase">Adotados - Mês de junho </h2>
+                <h3 class="section-subheading text-muted">Esta fofa galeria é resultado de nosso trabalho em parceria com clínicas e hospitais veterinários. Faça parte!
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
