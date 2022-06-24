@@ -61,6 +61,7 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
     $routes->get('dashboard/contatos-adocao', 'Dash::contatosAdocao');
     $routes->get('dashboard/servicos', 'Dash::servicos');
     $routes->get('dashboard', 'Dash::index');
+    $routes->get('dashboard/agendamentos', 'Dash::agendamentos');
 
     //Mensagens
     $routes->post('mensagens/marcar-respondida', 'Mensagens::marcarRespondida');

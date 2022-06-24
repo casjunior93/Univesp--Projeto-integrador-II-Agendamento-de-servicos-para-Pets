@@ -50,7 +50,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <h1>Contatos para adoção</h1>
+            <h1>Meus agendamentos</h1>
         </div>
     </header>
 
@@ -70,7 +70,7 @@
         <!-- Fim de mensagens de erro -->
 
         <section class="d-flex justify-content-between">
-            <h3 class="pb-3">Contatos para adoção</h3>
+            <h3 class="pb-3">Meus agendamentos</h3>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -83,11 +83,6 @@
                             <li class="nav-item navbar-brand">
                                 <a class="link-dark" href="<?= base_url('dashboard/servicos'); ?>">
                                     Serviços
-                                </a>
-                            </li>
-                            <li class="nav-item navbar-brand">
-                                <a class="link-dark" href="<?= base_url('dashboard/agendamentos'); ?>">
-                                    Agendamentos
                                 </a>
                             </li>
                             <li class="nav-item p-1">
@@ -174,6 +169,7 @@
                                     </div>
                                 </div>
                             </li>
+
                             <li class="nav-item p-1">
                                 <div>
                                     <!-- Button trigger modal -->
