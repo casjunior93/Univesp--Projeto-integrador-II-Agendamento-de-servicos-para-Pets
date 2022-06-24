@@ -99,7 +99,8 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Adotados - Mês de junho </h2>
-                <h3 class="section-subheading text-muted">Esta fofa galeria é resultado de nosso trabalho em parceria com clínicas e hospitais veterinários. Faça parte!
+                <h3 class="section-subheading text-muted">Esta fofa galeria é resultado de nosso trabalho em parceria com clínicas e hospitais veterinários. Faça parte!</h3>
+                <br>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
@@ -270,7 +271,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Solucione de forma prática a questão do abandono em sua Clínica</h2>
-                <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura</h3>
+                <h3 class="section-subheading text-muted">Neste momento, alguém pensa em adotar um animal. Sua clínica pode ajudar a quem procura!</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4">
