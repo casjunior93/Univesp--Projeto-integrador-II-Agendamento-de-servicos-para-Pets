@@ -52,27 +52,26 @@ $routes->post('/salva-contato', 'Mensagens::salvar');
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
 
-
+    //Animais
     $routes->post('animais/salvar', 'Animais::salvar');
     $routes->post('animais/marcar-adotado', 'Animais::marcarAdotado');
     $routes->post('animais/excluir', 'Animais::excluirAnimal');
-    $routes->get('contatos-adocao', 'Dash::contatosAdocao');
+
+    //Dashboard
+    $routes->get('dashboard/contatos-adocao', 'Dash::contatosAdocao');
+    $routes->get('dashboard/servicos', 'Dash::servicos');
+    $routes->get('dashboard', 'Dash::index');
+
+    //Mensagens
     $routes->post('mensagens/marcar-respondida', 'Mensagens::marcarRespondida');
     $routes->post('mensagens/excluir', 'Mensagens::excluirMensagem');
 
-    //Luciana: Rotas de área logada
-
-    //Pro dashboard chama os metodos do controller Dash
-    $routes->get('dashboard', 'Dash::index');
-
-    //Luciana: Fim de rotas de área logada
+    //Servicos
+    $routes->post('servicos/salvar', 'Servicos::salvar');
+    $routes->post('servicos/excluir', 'Servicos::excluirServico');
 });
 
-//Luciana: rotas de áreas não logadas
-
 $routes->get('recuperar-senha', 'Auth::recuperarSenha');
-
-//Luciana: fim de rotas de áreas não logadas
 
 /*
  * --------------------------------------------------------------------

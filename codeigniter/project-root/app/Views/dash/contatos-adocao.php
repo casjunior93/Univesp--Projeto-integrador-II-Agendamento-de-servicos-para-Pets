@@ -50,7 +50,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <h1>Meu Dashboard</h1>
+            <h1>Contatos para adoção</h1>
         </div>
     </header>
 
@@ -71,93 +71,108 @@
 
         <section class="d-flex justify-content-between">
             <h3 class="pb-3">Contatos para adoção</h3>
-            <div>
-                <!-- Button trigger modal -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Adicionar animal
-                </button>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item navbar-brand">
+                                <a class="link-dark" href="<?= base_url('dashboard'); ?>">
+                                    Animais
+                                </a>
+                            </li>
+                            <li class="nav-item navbar-brand">
+                                <a class="link-dark" href="<?= base_url('dashboard/servicos'); ?>">
+                                    Serviços
+                                </a>
+                            </li>
+                            <li class="nav-item">
 
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Cadastrar novo animal</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form class="" action="<?= base_url('animais/salvar'); ?>" method="POST">
-                                    <?= csrf_field(); ?>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputName">Nome do animal<span class="text-danger">*</span></label>
-                                            <input type="text" id="nome" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
-                                            <?php
-                                            if (isset($validation) && mostra_erro($validation, 'nome') != '') {
-                                                echo '<div class="alert alert-danger">';
-                                                echo mostra_erro($validation, 'nome');
-                                                echo '</div>';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputName">Vacinas<span class="text-danger">*</span></label>
-                                            <input type="text" id="vacinas" name="vacinas" class="form-control" value="<?= set_value('vacinas'); ?>" required>
-                                            <?php
-                                            if (isset($validation) && mostra_erro($validation, 'vacinas') != '') {
-                                                echo '<div class="alert alert-danger">';
-                                                echo mostra_erro($validation, 'vacinas');
-                                                echo '</div>';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="sobre">Sobre<span class="text-danger">*</span></label>
-                                            <input type="text" id="sobre" name="sobre" class="form-control" value="<?= set_value('vacinas'); ?>" required>
-                                            <?php
-                                            if (isset($validation) && mostra_erro($validation, 'sobre') != '') {
-                                                echo '<div class="alert alert-danger">';
-                                                echo mostra_erro($validation, 'sobre');
-                                                echo '</div>';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="sobre">Idade<span class="text-danger">*</span></label>
-                                            <input type="number" id="sobre" name="idade" class="form-control" value="<?= set_value('idade'); ?>" required>
-                                            <?php
-                                            if (isset($validation) && mostra_erro($validation, 'idade') != '') {
-                                                echo '<div class="alert alert-danger">';
-                                                echo mostra_erro($validation, 'idade');
-                                                echo '</div>';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="img">Link da Foto<span class="text-danger">*</span></label>
-                                            <input type="text" id="img" name="img" class="form-control" value="<?= set_value('img'); ?>" required>
-                                            <?php
-                                            if (isset($validation) && mostra_erro($validation, 'img') != '') {
-                                                echo '<div class="alert alert-danger">';
-                                                echo mostra_erro($validation, 'img');
-                                                echo '</div>';
-                                            }
-                                            ?>
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Adicionar animal
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Cadastrar novo animal</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="" action="<?= base_url('animais/salvar'); ?>" method="POST">
+                                                        <?= csrf_field(); ?>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputName">Nome do animal<span class="text-danger">*</span></label>
+                                                                <input type="text" id="nome" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
+                                                                <?php
+                                                                if (isset($validation) && mostra_erro($validation, 'nome') != '') {
+                                                                    echo '<div class="alert alert-danger">';
+                                                                    echo mostra_erro($validation, 'nome');
+                                                                    echo '</div>';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputName">Vacinas<span class="text-danger">*</span></label>
+                                                                <input type="text" id="vacinas" name="vacinas" class="form-control" value="<?= set_value('vacinas'); ?>" required>
+                                                                <?php
+                                                                if (isset($validation) && mostra_erro($validation, 'vacinas') != '') {
+                                                                    echo '<div class="alert alert-danger">';
+                                                                    echo mostra_erro($validation, 'vacinas');
+                                                                    echo '</div>';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="sobre">Sobre<span class="text-danger">*</span></label>
+                                                                <input type="text" id="sobre" name="sobre" class="form-control" value="<?= set_value('vacinas'); ?>" required>
+                                                                <?php
+                                                                if (isset($validation) && mostra_erro($validation, 'sobre') != '') {
+                                                                    echo '<div class="alert alert-danger">';
+                                                                    echo mostra_erro($validation, 'sobre');
+                                                                    echo '</div>';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="sobre">Idade<span class="text-danger">*</span></label>
+                                                                <input type="number" id="sobre" name="idade" class="form-control" value="<?= set_value('idade'); ?>" required>
+                                                                <?php
+                                                                if (isset($validation) && mostra_erro($validation, 'idade') != '') {
+                                                                    echo '<div class="alert alert-danger">';
+                                                                    echo mostra_erro($validation, 'idade');
+                                                                    echo '</div>';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="img">Link da Foto<span class="text-danger">*</span></label>
+                                                                <input type="text" id="img" name="img" class="form-control" value="<?= set_value('img'); ?>" required>
+                                                                <?php
+                                                                if (isset($validation) && mostra_erro($validation, 'img') != '') {
+                                                                    echo '<div class="alert alert-danger">';
+                                                                    echo mostra_erro($validation, 'img');
+                                                                    echo '</div>';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Cadastrar novo animal</button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Cadastrar novo animal</button>
-                                </form>
-                            </div>
-                        </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div>
-                <a href="<?= base_url('dashboard'); ?>" class="btn btn-warning">
-                    Voltar para o dashboard
-                </a>
-            </div>
+            </nav>
         </section>
 
         <!-- Listagem animais -->

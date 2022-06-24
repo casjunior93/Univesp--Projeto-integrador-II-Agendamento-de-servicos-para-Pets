@@ -7,6 +7,7 @@ use Tests\Support\Models\ExampleModel;
 use App\Models\MensagemModel;
 use App\Models\UserModel;
 use App\Models\AnimalModel;
+use App\Models\ServicosModel;
 
 /**
  * @internal
@@ -23,6 +24,17 @@ final class DatabaseTest extends CIUnitTestCase
 
         // Get every row created by ExampleSeeder
         $objects = $model->getMensagens();
+
+        // Make sure the count is as expected
+        $this->assertCount(3, $objects);
+    }
+
+    public function getAllServicos()
+    {
+        $model = new ServicosModel();
+
+        // Get every row created by ExampleSeeder
+        $objects = $model->getServicos();
 
         // Make sure the count is as expected
         $this->assertCount(3, $objects);

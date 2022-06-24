@@ -153,25 +153,25 @@
               <div class="mb-3">
                 <div class="col12 d-flex">
                   <div class="col-6">
-                    <label for="data" class="form-label">Hora<span class="text-danger">*</span></label>
-                    <select name="hora" class="form-control" id="">
+                    <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
+                    <select name="hora" class="form-control" id="hora">
                       <option value="7">7</option>
                       <option value="8">8</option>
                       <option value="9">9</option>
                       <option value="10">10</option>
                       <option value="11">11</option>
                       <option value="12">12</option>
-                      <option value="1">13</option>
-                      <option value="2">14</option>
-                      <option value="3">15</option>
-                      <option value="4">16</option>
-                      <option value="5">17</option>
-                      <option value="6">18</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
                     </select>
                   </div>
                   <div class="col-6">
-                    <label for="data" class="form-label">Minuto<span class="text-danger">*</span></label>
-                    <select name="minutos" class="form-control" id="">
+                    <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
+                    <select name="minutos" class="form-control" id="minutos">
                       <option value="30">30</option>
                       <option value="00">00</option>
                     </select>

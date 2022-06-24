@@ -87,29 +87,24 @@ class Dash extends BaseController
     return view('dash/contatos-adocao', $dados);
   }
 
-  public function cadastroServico()
-  {
-    //Luciana
-    //troca para o arquivo de cadastro de serviço
-    return view('dash/cadastre-se');
-  }
-
-  public function cadastroAnimal()
-  {
-    //troca para o arquivo de cadastro de animal
-    return view('dash/recuperar-senha');
-  }
-
-  public function baseDashboard()
+  public function servicos()
   {
     $userModel = new \App\Models\UserModel();
     $id_usuario_logado = session()->get('loggedUser');
     $info_usuario = $userModel->find($id_usuario_logado);
 
+    $servicosModel = new \App\Models\ServicosModel();
+    $info_servicos = $servicosModel->getServicosPorIdUsuario($id_usuario_logado);
+
+    $qtde_servicos = count($info_servicos);
+
     $dados = [
       'title' => 'Base do Dashboard',
-      'info_usuario' => $info_usuario
+      'info_usuario' => $info_usuario,
+      'info_servicos' => $info_servicos,
+      'qtde_servicos' => $qtde_servicos
     ];
-    return view('dash/base', $dados);
+
+    return view('dash/servicos', $dados);
   }
 }
