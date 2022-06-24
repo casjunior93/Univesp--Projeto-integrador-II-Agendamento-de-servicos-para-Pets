@@ -48,7 +48,16 @@
     </div>
   </header>
 
-  <main class="p-5 pt-0">
+  <main class="p-5">
+    <!-- Mensagens de erro -->
+    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+      <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>
+    <?php endif ?>
+
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+      <div class='alert alert-success'><?= session()->getFlashdata('success'); ?></div>
+    <?php endif ?>
+    <!-- Fim de mensagens de erro -->
 
     <!-- Conteudo visível relevante vai dentro da main -->
     <section class="listagem-section">
@@ -105,7 +114,7 @@
     <div class="modal fade" id="clinica-<?= $usuario['id']; ?>" tabindex="-1" aria-labelledby="clinicaLabel-<?= $usuario['id']; ?>" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <form>
+          <form class="" action="<?= base_url('agendamento/salvar'); ?>" method="POST">
             <div class="modal-header">
               <h5 class="modal-title" id="clinicaLabel-<?= $usuario['id']; ?>">Fazer orçamento com <strong><?= $usuario['nome']; ?></strong></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -117,7 +126,7 @@
               </div>
               <div class="mb-3">
                 <label for="nome" class="form-label">Nome do animal<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="nome_a" name="nome_a" aria-describedby="Nome do animal" required>
+                <input type="text" class="form-control" id="nome_animal" name="nome_animal" aria-describedby="Nome do animal" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
@@ -133,49 +142,45 @@
               </div>
               <div class="mb-3">
                 <label for="#" class="form-label">Serviços<span class="text-danger">*</span></label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="tosa" name="tosa">
-                  <label class="form-check-label" for="tosa">
-                    Tosa - R$35,00
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="banho" checked>
-                  <label class="form-check-label" for="banho">
-                    Banho - R$40,00
-                  </label>
-                </div>
+                <?php foreach ($servicos as $servico) {
+                  if ($servico['id_usuario'] == $usuario['id']) { ?>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="<?= $servico['id']; ?>" id="tosa" name="servicos[]">
+                      <label class="form-check-label" for="tosa">
+                        <?= $servico['nome']; ?> - R$<?= $servico['valor']; ?>
+                      </label>
+                    </div>
+                <?php }
+                } ?>
               </div>
-              <div class="mb-3">
-                <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
-                <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
-              </div>
-              <div class="mb-3">
-                <div class="col12 d-flex">
-                  <div class="col-6">
-                    <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
-                    <select name="hora" class="form-control" id="hora">
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                      <option value="16">16</option>
-                      <option value="17">17</option>
-                      <option value="18">18</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
-                    <select name="minutos" class="form-control" id="minutos">
-                      <option value="30">30</option>
-                      <option value="00">00</option>
-                    </select>
-                  </div>
+              <div class="mb-3 d-flex">
+                <div class="col-3 p-1">
+                  <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
+                </div>
+                <div class="col-3 p-1">
+                  <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
+                  <select name="hora" class="form-control" id="hora">
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                </div>
+                <div class="col-3 p-1">
+                  <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
+                  <select name="minuto" class="form-control" id="minuto">
+                    <option value="30">30</option>
+                    <option value="00">00</option>
+                  </select>
                 </div>
               </div>
               <div class="mb-3">
@@ -184,11 +189,11 @@
               </div>
               <div class="mb-3">
                 <label for="recados" class="form-label">Método de pagamento<span class="text-danger">*</span></label>
-                <select class="form-select" aria-label="Método de pagamento">
+                <select class="form-select" aria-label="Método de pagamento" name="metodo_pagamento">
                   <option selected>Selecionar</option>
-                  <option value="1">Dinheiro</option>
-                  <option value="2">Cartão de crédito</option>
-                  <option value="3">PIX</option>
+                  <option value="Dinheiro">Dinheiro</option>
+                  <option value="Cartão de crédito">Cartão de crédito</option>
+                  <option value="PIX">PIX</option>
                 </select>
               </div>
             </div>
@@ -196,7 +201,8 @@
               <span class="valor-final badge bg-warning text-black" style="font-size: 30px;">R$200,00</span>
               <div class="botoes">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-warning">Enviar orçamento</button>
+                <input type="hidden" name="id_usuario" value="<?= $usuario['id']; ?>">
+                <input type="submit" value="Enviar orçamento" class="btn btn-warning">
               </div>
             </div>
           </form>

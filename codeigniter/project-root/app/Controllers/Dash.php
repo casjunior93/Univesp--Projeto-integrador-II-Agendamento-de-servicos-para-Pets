@@ -114,8 +114,11 @@ class Dash extends BaseController
     $id_usuario_logado = session()->get('loggedUser');
     $info_usuario = $userModel->find($id_usuario_logado);
 
-    $mensagemModel = new \App\Models\MensagemModel();
-    $info_msgs = $mensagemModel->getMsgmPorIdUsuario($id_usuario_logado);
+    $agModel = new \App\Models\AgendamentoModel();
+    $info_msgs = $agModel->getAgendaPorIdUsuario($id_usuario_logado);
+
+    $serModel = new \App\Models\ServicosModel();
+    $info_ser = $serModel->getServicosPorIdUsuario($id_usuario_logado);
 
     //contagens
     $qtde_msgs = count($info_msgs);
@@ -140,7 +143,8 @@ class Dash extends BaseController
       'info_msgs' => $info_msgs,
       'info_msgs' => $info_msgs,
       'qtde_msgs_adotados' => $qtde_msgs_adotados,
-      'qtde_msgs_disponiveis' => $qtde_msgs_disponiveis
+      'qtde_msgs_disponiveis' => $qtde_msgs_disponiveis,
+      'info_servicos' => $info_ser
     ];
 
     return view('dash/agendamentos', $dados);

@@ -85,6 +85,11 @@
                                     Serviços
                                 </a>
                             </li>
+                            <li class="nav-item navbar-brand">
+                                <a class="link-dark" href="<?= base_url('dashboard/contatos-adocao'); ?>">
+                                    Contatos para adoção
+                                </a>
+                            </li>
                             <li class="nav-item p-1">
 
                                 <div>
@@ -169,7 +174,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             <li class="nav-item p-1">
                                 <div>
                                     <!-- Button trigger modal -->
@@ -221,7 +225,7 @@
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-disponivel" type="button" role="tab" aria-controls="tab-disponivel" aria-selected="true"><span class="text-black">Novos</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab-adotado" type="button" role="tab" aria-controls="tab-adotado" aria-selected="false"><span class="text-black">Respondidos</span></button>
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab-adotado" type="button" role="tab" aria-controls="tab-adotado" aria-selected="false"><span class="text-black">Aceitos</span></button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -230,7 +234,7 @@
                     <ul class="list-group lista-animais">
                         <?php
                         if ($qtde_msgs_disponiveis == 0) {
-                            echo '<h3>Nenhuma mensagem ainda.</h3>';
+                            echo '<h3>Nenhum agendamento disponível.</h3>';
                         } else {
                             foreach ($info_msgs as $msgs) {
                                 if ($msgs['respondida'] == 0) { ?>
@@ -245,17 +249,34 @@
                                                             <p class="mb-1"><strong>Animal:</strong> <?= $msgs['nome_animal']; ?></p>
                                                             <p class="mb-1"><strong>Email:</strong> <?= $msgs['email']; ?></p>
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
-                                                            <p class="mb-1"><strong>Mensagem:</strong> <?= $msgs['mensagem']; ?></p>
+                                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $msgs['vacinas']; ?></p>
+                                                            <p class="mb-1"><strong>Serviços:</strong>
+                                                                <?php
+                                                                $servicos = json_decode($msgs['servicos']);
+                                                                $total = 0;
+                                                                foreach ($servicos as $servico) {
+                                                                    foreach ($info_servicos as $info_servico) {
+                                                                        if (intval($servico) == intval($info_servico['id'])) {
+                                                                            echo $info_servico['nome'] . " por R$" . $info_servico['valor'] . ". ";
+                                                                            $total = $total + intval($info_servico['valor']);
+                                                                        }
+                                                                    }
+                                                                } ?>
+                                                            </p>
+                                                            <p class="mb-1"><strong>Total:</strong> R$<?= $total; ?></p>
+                                                            <p class="mb-1"><strong>Data:</strong> <?= date_format(date_create($msgs['data']), "d/m/Y"); ?> às <?= $msgs['hora']; ?>:<?= $msgs['minuto']; ?> </p>
+                                                            <p class="mb-1"><strong>Recados:</strong> <?= $msgs['recados']; ?></p>
+                                                            <p class="mb-1"><strong>Método de pagamento:</strong> <?= $msgs['metodo_pagamento']; ?></p>
                                                         </div>
                                                         <div class="botao d-grid col-3">
                                                             <div class="form1 d-grid">
                                                                 <?php
                                                                 if (intval($msgs['respondida']) == 1) { ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <p class="btn btn-primary">Respondido!</p>
+                                                                        <p class="btn btn-primary">Aceito!</p>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                        <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
                                                                             <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
@@ -263,13 +284,13 @@
                                                                 <?php } else {
                                                                 ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form action="<?= base_url('mensagens/marcar-respondida'); ?>" method="POST">
+                                                                        <form action="<?= base_url('agendamento/marcar-respondido'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
-                                                                            <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                            <input type="submit" value="Marcar como aceito" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                        <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
                                                                             <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
@@ -291,7 +312,7 @@
 
                     <ul class="list-group lista-animais">
                         <?php if ($qtde_msgs_adotados == 0) {
-                            echo '<h3>Nenhuma mensagem respondida.</h3>';
+                            echo '<h3>Nenhum agendamento aceito.</h3>';
                         } else {
                             foreach ($info_msgs as $msgs) { ?>
                                 <?php if ($msgs['respondida'] == 1) { ?>
@@ -305,17 +326,21 @@
                                                             <p class="mb-1"><strong>Animal:</strong> <?= $msgs['nome_animal']; ?></p>
                                                             <p class="mb-1"><strong>Email:</strong> <?= $msgs['email']; ?></p>
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
-                                                            <p class="mb-1"><strong>Mensagem:</strong> <?= $msgs['mensagem']; ?></p>
+                                                            <p class="mb-1"><strong>Vacinas:</strong> <?= $msgs['vacinas']; ?></p>
+                                                            <p class="mb-1"><strong>Serviços:</strong> <?= $msgs['servicos']; ?></p>
+                                                            <p class="mb-1"><strong>Data:</strong> <?= $msgs['data']; ?> às <?= $msgs['hora']; ?>:<?= $msgs['minuto']; ?> </p>
+                                                            <p class="mb-1"><strong>Recados:</strong> <?= $msgs['recados']; ?></p>
+                                                            <p class="mb-1"><strong>Método de pagamento:</strong> <?= $msgs['metodo_pagamento']; ?></p>
                                                         </div>
                                                         <div class="botao d-grid col-3">
                                                             <div class="form1 d-grid">
                                                                 <?php
                                                                 if (intval($msgs['respondida']) == 1) { ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <p class="btn btn-primary">Respondido!</p>
+                                                                        <p class="btn btn-primary">Aceito!</p>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                        <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
                                                                             <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
@@ -323,13 +348,13 @@
                                                                 <?php } else {
                                                                 ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form action="<?= base_url('mensagens/marcar-respondida'); ?>" method="POST">
+                                                                        <form action="<?= base_url('agendamento/marcar-respondido'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
-                                                                            <input type="submit" value="Marcar como respondido" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                            <input type="submit" value="Marcar como aceito" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <form class="" action="<?= base_url('mensagens/excluir'); ?>" method="POST">
+                                                                        <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
                                                                             <input type="submit" value="Excluir" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>

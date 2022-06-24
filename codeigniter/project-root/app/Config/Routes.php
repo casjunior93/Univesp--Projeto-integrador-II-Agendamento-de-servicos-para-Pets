@@ -70,6 +70,11 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
     //Servicos
     $routes->post('servicos/salvar', 'Servicos::salvar');
     $routes->post('servicos/excluir', 'Servicos::excluirServico');
+
+    //Agendamento
+    $routes->post('agendamento/salvar', 'Agendamento::salvar');
+    $routes->post('agendamento/marcar-respondido', 'Agendamento::marcarRespondida');
+    $routes->post('agendamento/excluir', 'Agendamento::excluirAg');
 });
 
 $routes->get('recuperar-senha', 'Auth::recuperarSenha');

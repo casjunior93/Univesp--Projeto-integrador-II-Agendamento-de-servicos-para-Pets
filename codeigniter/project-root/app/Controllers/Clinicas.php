@@ -16,9 +16,13 @@ class Clinicas extends BaseController
     $userModel = new \App\Models\UserModel();
     $info_usuarios = $userModel->getUsuarios();
 
+    $serModel = new \App\Models\ServicosModel();
+    $info_servicos = $serModel->getServicos();
+
     $dados = [
       'title' => 'Clínicas e Pet Shops',
-      'dados' => $info_usuarios
+      'dados' => $info_usuarios,
+      'servicos' => $info_servicos
     ];
 
     return view('listagem_clinicas/lista', $dados);
