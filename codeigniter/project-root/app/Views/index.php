@@ -112,8 +112,9 @@
                             <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Mimi</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum </div>
+                            <div class="portfolio-caption-heading">Romeo</div>
+                            <div class="portfolio-caption-subheading text-muted">Quem disse que ninguém quer gato senior? Este lindo gato, Romeo, foi 
+                                adotado pela nossa iniciativa, disponibilizado pela Clínica Vet test! </div>
                         </div>
                     </div>
                 </div>
@@ -128,7 +129,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Chimbinha</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum</div>
+                            <div class="portfolio-caption-subheading text-muted">Este foi adotado na velocidade da luz! Afinal, poucos resistiram a este olhar!</div>
                         </div>
                     </div>
                 </div>
@@ -143,7 +144,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Caramelo</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum</div>
+                            <div class="portfolio-caption-subheading text-muted">Super em alta, aquele vira-latas caramelo que todo mundo quer! Super adotado (e disputado)!</div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +159,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Negão</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum </div>
+                            <div class="portfolio-caption-subheading text-muted">Hummm, ou melhor: Miaau que delícia ter um peludão para abraçar no inverno. Esta feliz e cheio de mimos em sua nova casa! </div>
                         </div>
                     </div>
                 </div>
@@ -173,7 +174,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Susan</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum</div>
+                            <div class="portfolio-caption-subheading text-muted">Elegante e educada...A susan já chegou rasgando corações e saiu rapidinho para o seu aconchegante novo lar! </div>
                         </div>
                     </div>
                 </div>
@@ -188,7 +189,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Frederico</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem Ipsum </div>
+                            <div class="portfolio-caption-subheading text-muted">Todo fofo e imponente! O Frederico foi para um lar para chamar de seu </div>
                         </div>
                     </div>
                 </div>
