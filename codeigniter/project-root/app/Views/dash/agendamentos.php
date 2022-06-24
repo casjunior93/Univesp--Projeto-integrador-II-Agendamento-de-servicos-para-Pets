@@ -328,7 +328,7 @@
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
                                                             <p class="mb-1"><strong>Vacinas:</strong> <?= $msgs['vacinas']; ?></p>
                                                             <p class="mb-1"><strong>Serviços:</strong> <?= $msgs['servicos']; ?></p>
-                                                            <p class="mb-1"><strong>Data:</strong> <?= $msgs['data']; ?> às <?= $msgs['hora']; ?>:<?= $msgs['minuto']; ?> </p>
+                                                            <p class="mb-1"><strong>Data:</strong> <?= date_format(date_create($msgs['data']), "d/m/Y"); ?> às <?= $msgs['hora']; ?>:<?= $msgs['minuto']; ?> </p>
                                                             <p class="mb-1"><strong>Recados:</strong> <?= $msgs['recados']; ?></p>
                                                             <p class="mb-1"><strong>Método de pagamento:</strong> <?= $msgs['metodo_pagamento']; ?></p>
                                                         </div>
