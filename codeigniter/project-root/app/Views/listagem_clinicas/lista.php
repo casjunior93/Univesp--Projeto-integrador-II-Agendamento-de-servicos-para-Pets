@@ -83,9 +83,9 @@
                       <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
                     </div>
                     <div class="botao d-flex align-items-start">
-                      <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
                         Fazer orçamento
-                      </button> -->
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -149,6 +149,34 @@
               <div class="mb-3">
                 <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
                 <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
+              </div>
+              <div class="mb-3">
+                <div class="col12 d-flex">
+                  <div class="col-6">
+                    <label for="data" class="form-label">Hora<span class="text-danger">*</span></label>
+                    <select name="hora" class="form-control" id="">
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="1">13</option>
+                      <option value="2">14</option>
+                      <option value="3">15</option>
+                      <option value="4">16</option>
+                      <option value="5">17</option>
+                      <option value="6">18</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label for="data" class="form-label">Minuto<span class="text-danger">*</span></label>
+                    <select name="minutos" class="form-control" id="">
+                      <option value="30">30</option>
+                      <option value="00">00</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div class="mb-3">
                 <label for="recados" class="form-label">Recados<span class="text-danger">*</span></label>
