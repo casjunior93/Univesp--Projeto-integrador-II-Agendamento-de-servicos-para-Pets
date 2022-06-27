@@ -56,7 +56,7 @@
       <h1>Entre em contato </h1>
     </section>
 
-    <div class="container">
+ <!--   <div class="container">
 <h2>Contact</h2>
 <div class="row">
     <div class="col-lg-6">
@@ -80,7 +80,7 @@
         <button name="submit" type="submit" class="btn btn-primary" />Enviar</button>
         </form>
     </div>
-</div>
+</div>-->
 
     <!-- Conteudo visível relevante vai dentro da main -->
 
