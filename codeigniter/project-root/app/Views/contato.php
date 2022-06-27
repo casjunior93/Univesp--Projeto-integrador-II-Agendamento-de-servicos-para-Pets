@@ -53,8 +53,11 @@
     <!-- Conteudo visível relevante vai dentro da main -->
 
     <section class="conteudo">
-      <h1>Entre em contato </h1>
+  
+    <div class="text-center">
+    <h1>Entre em contato </h1>
       </section>
+</div>
  <!-- form inicio-->
 
  <form id="contactForm"> 
