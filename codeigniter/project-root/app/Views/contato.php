@@ -57,23 +57,54 @@
     
  <!-- form inicio-->
 
- <form>
-
- <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Nome">
-    </div>
-  <div class="form-group">
-    <label for="email1">E-mail</label>
-    <input type="email" class="form-control" id="email1" placeholder="Seu melhor e-mail ">
-    
-  </div>
-  <div class="form-group">
-    <label for="textarea1">Sua mensagem</label>
-    <textarea class="form-control" id="textarea1" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+ <form id="contactForm"> 
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="Seu nome*" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="Seu email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Um endereço de email é obrigatório.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email invalido.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="Telefone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">O telefone é obrigatório</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="Sua Mensagem *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">É obrigatorio uma mensagem.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Sua mensagem foi enviada!</div>
+                            
+                            <br />
+                          
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar a mensagem</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
+                </form>
 </section>
 
 
