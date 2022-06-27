@@ -71,6 +71,6 @@ class AgendamentoModel extends Model
     $db = db_connect();
     $sql = 'SELECT * FROM agendamentos a WHERE a.id_usuario = ' . $id_usuario . ' AND a.data = "' . $data . '" AND a.hora = "' . $hora . '" AND a.minuto = ' . $minuto;
     $resultado = $db->query($sql);
-    return $resultado;
+    return $resultado->getResultArray();
   }
 }
