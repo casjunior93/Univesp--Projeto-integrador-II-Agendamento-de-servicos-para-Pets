@@ -328,7 +328,20 @@
                                                             <p class="mb-1"><strong>Email:</strong> <?= $msgs['email']; ?></p>
                                                             <p class="mb-1"><strong>Telefone:</strong> <?= $msgs['telefone']; ?></p>
                                                             <p class="mb-1"><strong>Vacinas:</strong> <?= $msgs['vacinas']; ?></p>
-                                                            <p class="mb-1"><strong>Serviços:</strong> <?= $msgs['servicos']; ?></p>
+                                                            <p class="mb-1"><strong>Serviços:</strong>
+                                                                <?php
+                                                                $servicos = json_decode($msgs['servicos']);
+                                                                $total = 0;
+                                                                foreach ($servicos as $servico) {
+                                                                    foreach ($info_servicos as $info_servico) {
+                                                                        if (intval($servico) == intval($info_servico['id'])) {
+                                                                            echo $info_servico['nome'] . " por R$" . $info_servico['valor'] . ". ";
+                                                                            $total = $total + intval($info_servico['valor']);
+                                                                        }
+                                                                    }
+                                                                } ?>
+                                                            </p>
+                                                            <p class="mb-1"><strong>Total:</strong> R$<?= $total; ?></p>
                                                             <p class="mb-1"><strong>Data:</strong> <?= date_format(date_create($msgs['data']), "d/m/Y"); ?> às <?= $msgs['hora']; ?>:<?= $msgs['minuto']; ?> </p>
                                                             <p class="mb-1"><strong>Recados:</strong> <?= $msgs['recados']; ?></p>
                                                             <p class="mb-1"><strong>Método de pagamento:</strong> <?= $msgs['metodo_pagamento']; ?></p>
