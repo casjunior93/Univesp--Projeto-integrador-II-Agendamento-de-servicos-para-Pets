@@ -80,7 +80,7 @@ class Mensagens extends BaseController
     if (!$query) {
       return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados')->with('nome', $info_usuario['nome']);
     } else {
-      return redirect()->to('/contatos-adocao')->with('success', 'Mensagem excluída!')->with('nome', $info_usuario['nome']);
+      return redirect()->to('dashboard/contatos-adocao')->with('success', 'Mensagem excluída!')->with('nome', $info_usuario['nome']);
     }
   }
 }
