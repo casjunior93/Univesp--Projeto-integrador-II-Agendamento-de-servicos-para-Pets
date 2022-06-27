@@ -58,7 +58,7 @@
  <!-- form inicio-->
 
  <form id="contactForm"> 
-                    <div class="row align-items-stretch mb-5">
+                    <div class="container">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
