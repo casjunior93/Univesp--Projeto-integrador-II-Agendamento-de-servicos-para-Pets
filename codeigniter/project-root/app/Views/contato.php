@@ -56,8 +56,7 @@
   
     <div class="text-center">
     <h1>Entre em contato </h1>
-      </section>
-</div>
+      </div>
  <!-- form inicio-->
 
  <form id="contactForm"> 
@@ -109,7 +108,7 @@
                     <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
                 </form>
 
-
+                </section>
 
  <!-- form fim -->
 
