@@ -54,7 +54,7 @@
 
     <section class="conteudo">
       <h1>Entre em contato </h1>
-    
+      </section>
  <!-- form inicio-->
 
  <form id="contactForm"> 
@@ -105,7 +105,7 @@
                     <!-- Submit Button-->
                     <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
                 </form>
-</section>
+
 
 
  <!-- form fim -->
