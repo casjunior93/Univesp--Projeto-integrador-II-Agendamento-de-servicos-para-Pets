@@ -17,11 +17,43 @@
     <link href="<?= base_url('/'); ?>/css/modal.css" />
     <link href="<?= base_url('/'); ?>/css/styles.css" rel="stylesheet" />
     <script src="<?= base_url('/'); ?>/js/bootstrap.js"></script>
-
     <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
     <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
     <script src="<?= base_url('/'); ?>/js/fill_form.js"></script>
+    <script type="text/javascript" src="jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="jquery.maskedinput-1.1.4.pack.js">
+    </script>
+    <script type="text/javascript">
+        /* Máscaras ER */
+        function mascara(o, f) {
+            v_obj = o
+            v_fun = f
 
+            setTimeout("execmascara()", 1)
+        }
+
+        function execmascara() {
+            v_obj.value = v_fun(v_obj.value)
+        }
+
+        function mtel(v) {
+            v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
+            v = v.replace(/^([\d]{2})\.*([\d]{3})-*([\d]{3})/, "$1$2-$3"); //Coloca "()" em volta dos dois primeiros dígitos
+            /* v = v.replace(/(\d)(\d{4})$/, "$1-$2"); */ //Coloca hífen entre o quarto e o quinto dígitos
+            return v;
+        }
+
+        function id(el) {
+            return document.getElementById(el);
+        }
+
+        // aciona função ao digitar dados no campo
+        window.onload = function() {
+            id('inputAddressCep').onkeypress = function() {
+                mascara(this, mtel);
+            }
+        }
+    </script>
 </head>
 
 <body id="page-top">
@@ -81,7 +113,7 @@
 
                         <div class="form-group">
                             <label for="inputAddress">Cep<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" required>
+                            <input type="text" class="form-control" id="inputAddressCep" name="cep" value="<?= set_value('cep'); ?>" class="ls-mask-cep" placeholder="00000-000" maxlength="9" minlength="9" required>
                             <?php
                             if (isset($validation) && mostra_erro($validation, 'cep') != '') {
                                 echo '<div class="alert alert-danger">';
@@ -116,7 +148,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="inputState">Estado<span class="text-danger">*</span></label>
                                     <select id="inputState" name="estado" class="form-control" required>
-                                        <option selected hidden>Escolha...</option>
+                                        <option hidden>Escolha...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
                                         <option value="AP">Amapá</option>
@@ -474,8 +506,6 @@
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
