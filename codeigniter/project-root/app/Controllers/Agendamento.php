@@ -99,7 +99,7 @@ class Agendamento extends BaseController
     if (!$query) {
       return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados')->with('nome', $info_usuario['nome']);
     } else {
-      return redirect()->to('dashboard/agendamentos')->with('success', 'Agendamento marcado como aceito!')->with('nome', $info_usuario['nome']);
+      return redirect()->to('dashboard/agendamentos')->with('success', 'Agendamento marcado como realizado!')->with('nome', $info_usuario['nome']);
     }
   }
 

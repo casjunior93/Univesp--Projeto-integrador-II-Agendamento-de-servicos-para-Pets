@@ -226,7 +226,7 @@
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-disponivel" type="button" role="tab" aria-controls="tab-disponivel" aria-selected="true"><span class="text-black">Novos</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab-adotado" type="button" role="tab" aria-controls="tab-adotado" aria-selected="false"><span class="text-black">Aceitos</span></button>
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab-adotado" type="button" role="tab" aria-controls="tab-adotado" aria-selected="false"><span class="text-black">Realizados</span></button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -274,7 +274,7 @@
                                                                 <?php
                                                                 if (intval($msgs['respondida']) == 1) { ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <p class="btn btn-primary">Aceito!</p>
+                                                                        <p class="btn btn-primary">Realizado!</p>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
                                                                         <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
@@ -287,7 +287,7 @@
                                                                     <div class="form1 d-flex justify-content-end">
                                                                         <form action="<?= base_url('agendamento/marcar-respondido'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
-                                                                            <input type="submit" value="Marcar como aceito" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                            <input type="submit" value="Marcar como realizado" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
@@ -313,7 +313,7 @@
 
                     <ul class="list-group lista-animais">
                         <?php if ($qtde_msgs_adotados == 0) {
-                            echo '<h3>Nenhum agendamento aceito.</h3>';
+                            echo '<h3>Nenhum agendamento realizado.</h3>';
                         } else {
                             foreach ($info_msgs as $msgs) { ?>
                                 <?php if ($msgs['respondida'] == 1) { ?>
@@ -351,7 +351,7 @@
                                                                 <?php
                                                                 if (intval($msgs['respondida']) == 1) { ?>
                                                                     <div class="form1 d-flex justify-content-end">
-                                                                        <p class="btn btn-primary">Aceito!</p>
+                                                                        <p class="btn btn-primary">Realizado!</p>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
                                                                         <form class="" action="<?= base_url('agendamento/excluir'); ?>" method="POST">
@@ -364,7 +364,7 @@
                                                                     <div class="form1 d-flex justify-content-end">
                                                                         <form action="<?= base_url('agendamento/marcar-respondido'); ?>" method="POST">
                                                                             <input type="hidden" name="id-mensagem" value="<?= $msgs['id']; ?>">
-                                                                            <input type="submit" value="Marcar como aceito" class="btn btn-warning" style="margin-bottom: 10px;">
+                                                                            <input type="submit" value="Marcar como realizado" class="btn btn-warning" style="margin-bottom: 10px;">
                                                                         </form>
                                                                     </div>
                                                                     <div class="form1 d-flex justify-content-end">
