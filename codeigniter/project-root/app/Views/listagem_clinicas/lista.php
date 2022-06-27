@@ -242,6 +242,7 @@
 
     function limpaValores() {
       total = 0;
+      ultimo_vf_id.innerHTML = 'R$0';
       var inputs = $('input[type=checkbox]');
       inputs.attr('checked', false);
       inputs.prop('checked', false);
