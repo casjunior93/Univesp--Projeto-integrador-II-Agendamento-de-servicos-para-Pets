@@ -56,31 +56,7 @@
       <h1>Entre em contato </h1>
     </section>
 
- <!--   <div class="container">
-<h2>Contact</h2>
-<div class="row">
-    <div class="col-lg-6">
-        <?php echo $this->session->flashdata('msg'); ?>
-        <form action="<?php echo base_url('contact'); ?>" method="post">
-        <div class="form-group">
-            <input name="name" placeholder="Seu nome" type="text" value="<?php echo set_value('name'); ?>" class="form-control" />
-            <?php echo form_error('name', '<span class="text-danger">','</span>'); ?>
-        </div>
-        <div class="form-group">
-            <input name="email" placeholder="Seu email" type="text" value="<?php echo set_value('email'); ?>" class="form-control" />
-            <?php echo form_error('email', '<span class="text-danger">','</span>'); ?>
-        </div>
-        <div class="form-group">
-            <input name="subject" placeholder="Assunto" type="text" value="<?php echo set_value('subject'); ?>" class="form-control" />
-        </div>
-        <div class="form-group">
-            <textarea name="message" rows="4" class="form-control" placeholder="Sua mensagem"><?php echo set_value('message'); ?></textarea>
-            <?php echo form_error('message', '<span class="text-danger">','</span>'); ?>
-        </div>
-        <button name="submit" type="submit" class="btn btn-primary" />Enviar</button>
-        </form>
-    </div>
-</div>-->
+ <!-- Colocar html do form aqui -->
 
     <!-- Conteudo visível relevante vai dentro da main -->
 
