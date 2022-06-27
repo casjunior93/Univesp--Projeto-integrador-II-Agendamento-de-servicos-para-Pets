@@ -92,7 +92,7 @@
                       <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
                     </div>
                     <div class="botao d-flex align-items-start">
-                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>" onclick="limpaValores()">
                         Fazer orçamento
                       </button>
                     </div>
@@ -238,6 +238,14 @@
   <script>
     var id_usuario = 0;
     var total = 0;
+    var ultimo_vf_id = '';
+
+    function limpaValores() {
+      total = 0;
+      var inputs = $('input[type=checkbox]');
+      inputs.attr('checked', false);
+      inputs.prop('checked', false);
+    }
 
     function calculaTotalServicos(el) {
       id_u = el.getAttribute("data-usuario");
@@ -248,23 +256,27 @@
         } else {
           total = total - parseFloat(el.getAttribute("data-valor"));
         }
-        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+        ultimo_vf_id = document.getElementById('valor-f' + id_u)
+        ultimo_vf_id.innerHTML = 'R$' + parseFloat(total);
       } else if (id_usuario == id_u) {
         if (el.checked) {
           total = total + parseFloat(el.getAttribute("data-valor"));
         } else {
           total = total - parseFloat(el.getAttribute("data-valor"));
         }
-        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+        ultimo_vf_id = document.getElementById('valor-f' + id_u)
+        ultimo_vf_id.innerHTML = 'R$' + parseFloat(total);
       } else {
         id_usuario = id_u;
         total = 0;
+        ultimo_vf_id.innerHTML = 'R$0';
         if (el.checked) {
           total = total + parseFloat(el.getAttribute("data-valor"));
         } else {
           total = total - parseFloat(el.getAttribute("data-valor"));
         }
-        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+        ultimo_vf_id = document.getElementById('valor-f' + id_u)
+        ultimo_vf_id.innerHTML = 'R$' + parseFloat(total);
       }
     }
   </script>
