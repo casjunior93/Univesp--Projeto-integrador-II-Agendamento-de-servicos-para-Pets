@@ -14,7 +14,7 @@ class Clinicas extends BaseController
   public function listaClinicas()
   {
     $userModel = new \App\Models\UserModel();
-    $info_usuarios = $userModel->getUsuarios();
+    $info_usuarios = $userModel->getUsuariosComServicos();
 
     $serModel = new \App\Models\ServicosModel();
     $info_servicos = $serModel->getServicos();

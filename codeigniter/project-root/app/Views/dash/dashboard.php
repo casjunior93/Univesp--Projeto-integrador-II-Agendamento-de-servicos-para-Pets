@@ -59,6 +59,12 @@
             <h3 class="olaUser text-black">Olá, <?= isset($info_usuario['nome']) ? $info_usuario['nome'] : session()->getFlashdata('nome'); ?>!</h3>
         </section>
 
+        <?php if ($qtde_servicos == 0) { ?>
+            <div class='alert alert-danger'>
+                Cadastre serviços para poder ser listado na página de clínicas!
+            </div>
+        <?php } ?>
+
         <!-- Mensagens de erro -->
         <?php if (!empty(session()->getFlashdata('fail'))) : ?>
             <div class='alert alert-danger'><?= session()->getFlashdata('fail'); ?></div>

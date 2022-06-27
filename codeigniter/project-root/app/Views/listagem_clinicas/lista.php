@@ -77,31 +77,33 @@
 
     <section class="listagem-section">
       <ul class="list-group lista-animais">
-        <?php foreach ($dados as $usuario) { ?>
-          <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
-            <div class="d-flex">
-              <div class="dados-animal col-12 d-flex align-items-center">
-                <div class="conteudo col-12">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><?= $usuario['nome']; ?></h5>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between pt-2">
-                    <div class="texto">
-                      <p class="mb-1"><strong>Sobre:</strong> <?= $usuario['descricao']; ?></p>
-                      <p class="mb-1"><strong>Endereço:</strong> <?= $usuario['rua']; ?>, <?= $usuario['cidade']; ?>-<?= $usuario['estado']; ?></p>
-                      <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
+        <?php foreach ($dados as $usuario) {
+          if (count($servicos) > 0) { ?>
+            <li class="list-group-item list-group-item-action flex-column align-items-start p-3 item-animal">
+              <div class="d-flex">
+                <div class="dados-animal col-12 d-flex align-items-center">
+                  <div class="conteudo col-12">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><?= $usuario['nome']; ?></h5>
                     </div>
-                    <div class="botao d-flex align-items-start">
-                      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>" onclick="limpaValores()">
-                        Fazer orçamento
-                      </button>
+                    <div class="d-flex w-100 justify-content-between pt-2">
+                      <div class="texto">
+                        <p class="mb-1"><strong>Sobre:</strong> <?= $usuario['descricao']; ?></p>
+                        <p class="mb-1"><strong>Endereço:</strong> <?= $usuario['rua']; ?>, <?= $usuario['cidade']; ?>-<?= $usuario['estado']; ?></p>
+                        <p class="mb-1"><strong>Telefone:</strong> <?= $usuario['telefone']; ?></p>
+                      </div>
+                      <div class="botao d-flex align-items-start">
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#clinica-<?= $usuario['id']; ?>" onclick="limpaValores()">
+                          Fazer orçamento
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </li>
-        <?php } ?>
+            </li>
+        <?php }
+        } ?>
       </ul>
     </section>
 
@@ -110,106 +112,108 @@
   </main>
 
   <!-- Aqui será renderizado os modais -->
-  <?php foreach ($dados as $usuario) { ?>
-    <div class="modal fade" id="clinica-<?= $usuario['id']; ?>" tabindex="-1" aria-labelledby="clinicaLabel-<?= $usuario['id']; ?>" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form class="" action="<?= base_url('agendamento/salvar'); ?>" method="POST">
-            <div class="modal-header">
-              <h5 class="modal-title" id="clinicaLabel-<?= $usuario['id']; ?>">Fazer orçamento com <strong><?= $usuario['nome']; ?></strong></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="nome" class="form-label">Nome<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="Nome" required>
+  <?php foreach ($dados as $usuario) {
+    if (count($servicos) > 0) { ?>
+      <div class="modal fade" id="clinica-<?= $usuario['id']; ?>" tabindex="-1" aria-labelledby="clinicaLabel-<?= $usuario['id']; ?>" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <form class="" action="<?= base_url('agendamento/salvar'); ?>" method="POST">
+              <div class="modal-header">
+                <h5 class="modal-title" id="clinicaLabel-<?= $usuario['id']; ?>">Fazer orçamento com <strong><?= $usuario['nome']; ?></strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="mb-3">
-                <label for="nome" class="form-label">Nome do animal<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="nome_animal" name="nome_animal" aria-describedby="Nome do animal" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone" required>
-              </div>
-              <div class="mb-3">
-                <label for="telefone" class="form-label">Vacinas<span class="text-danger">*</span></label>
-                <textarea class="form-control" aria-label="vacinas" id="vacinas" name="vacinas" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="#" class="form-label">Serviços<span class="text-danger">*</span></label>
-                <?php foreach ($servicos as $servico) {
-                  if ($servico['id_usuario'] == $usuario['id']) { ?>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<?= $servico['id']; ?>" id="tosa" name="servicos[]" onclick="calculaTotalServicos(this)" data-valor="<?= $servico['valor']; ?>" data-usuario="<?= $usuario['id']; ?>">
-                      <label class="form-check-label" for="tosa">
-                        <?= $servico['nome']; ?> - R$<?= $servico['valor']; ?>
-                      </label>
-                    </div>
-                <?php }
-                } ?>
-              </div>
-              <div class="mb-3 d-flex">
-                <div class="col-3 p-1">
-                  <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
-                  <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="nome" name="nome" aria-describedby="Nome" required>
                 </div>
-                <div class="col-3 p-1">
-                  <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
-                  <select name="hora" class="form-control" id="hora">
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome do animal<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="nome_animal" name="nome_animal" aria-describedby="Nome do animal" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="telefone" class="form-label">Telefone<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="telefone" class="form-label">Vacinas<span class="text-danger">*</span></label>
+                  <textarea class="form-control" aria-label="vacinas" id="vacinas" name="vacinas" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="#" class="form-label">Serviços<span class="text-danger">*</span></label>
+                  <?php foreach ($servicos as $servico) {
+                    if ($servico['id_usuario'] == $usuario['id']) { ?>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<?= $servico['id']; ?>" id="tosa" name="servicos[]" onclick="calculaTotalServicos(this)" data-valor="<?= $servico['valor']; ?>" data-usuario="<?= $usuario['id']; ?>">
+                        <label class="form-check-label" for="tosa">
+                          <?= $servico['nome']; ?> - R$<?= $servico['valor']; ?>
+                        </label>
+                      </div>
+                  <?php }
+                  } ?>
+                </div>
+                <div class="mb-3 d-flex">
+                  <div class="col-3 p-1">
+                    <label for="data" class="form-label">Data<span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="data" name="data" aria-describedby="data" required>
+                  </div>
+                  <div class="col-3 p-1">
+                    <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
+                    <select name="hora" class="form-control" id="hora">
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                    </select>
+                  </div>
+                  <div class="col-3 p-1">
+                    <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
+                    <select name="minuto" class="form-control" id="minuto">
+                      <option value="30">30</option>
+                      <option value="00">00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="recados" class="form-label">Recados<span class="text-danger">*</span></label>
+                  <textarea class="form-control" aria-label="recados" id="recados" name="recados" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="recados" class="form-label">Método de pagamento<span class="text-danger">*</span></label>
+                  <select class="form-select" aria-label="Método de pagamento" name="metodo_pagamento">
+                    <option selected>Selecionar</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão de crédito">Cartão de crédito</option>
+                    <option value="PIX">PIX</option>
                   </select>
                 </div>
-                <div class="col-3 p-1">
-                  <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
-                  <select name="minuto" class="form-control" id="minuto">
-                    <option value="30">30</option>
-                    <option value="00">00</option>
-                  </select>
+              </div>
+              <div class="modal-footer d-flex justify-content-between">
+                <span class="valor-final badge bg-warning text-black" style="font-size: 30px;" id="valor-f<?= $usuario['id']; ?>">R$0</span>
+                <div class="botoes">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <input type="hidden" name="id_usuario" value="<?= $usuario['id']; ?>">
+                  <input type="submit" value="Enviar orçamento" class="btn btn-warning">
                 </div>
               </div>
-              <div class="mb-3">
-                <label for="recados" class="form-label">Recados<span class="text-danger">*</span></label>
-                <textarea class="form-control" aria-label="recados" id="recados" name="recados" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="recados" class="form-label">Método de pagamento<span class="text-danger">*</span></label>
-                <select class="form-select" aria-label="Método de pagamento" name="metodo_pagamento">
-                  <option selected>Selecionar</option>
-                  <option value="Dinheiro">Dinheiro</option>
-                  <option value="Cartão de crédito">Cartão de crédito</option>
-                  <option value="PIX">PIX</option>
-                </select>
-              </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-between">
-              <span class="valor-final badge bg-warning text-black" style="font-size: 30px;" id="valor-f<?= $usuario['id']; ?>">R$0</span>
-              <div class="botoes">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <input type="hidden" name="id_usuario" value="<?= $usuario['id']; ?>">
-                <input type="submit" value="Enviar orçamento" class="btn btn-warning">
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  <?php } ?>
+  <?php }
+  } ?>
   <!-- Aqui será renderizado os modais -->
 
   <!-- Footer-->
