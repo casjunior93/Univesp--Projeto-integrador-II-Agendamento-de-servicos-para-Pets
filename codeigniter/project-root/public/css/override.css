@@ -44,5 +44,5 @@ header.masthead .masthead-heading {
     appearance: none;
     border-radius: 0.25 rem;
     transition: border-color 0.15 s ease-in-out, box-shadow 0.15 s ease-in-out;
-    margin-bottom: 10 px;
+    margin-bottom: 10 px !important;
 }
