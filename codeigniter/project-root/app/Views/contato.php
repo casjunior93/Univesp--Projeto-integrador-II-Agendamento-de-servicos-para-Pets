@@ -24,7 +24,7 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-    <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/logo.png" alt="Mascote Web" /></a>
+      <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/logo.png" alt="Mascote Web" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars ms-1"></i>
@@ -53,64 +53,66 @@
     <!-- Conteudo visível relevante vai dentro da main -->
 
     <section class="conteudo">
-  
-    <div class="text-center">
-    <h1>Entre em contato </h1>
+
+      <div class="text-center">
+        <h1>Entre em contato </h1>
       </div>
- <!-- form inicio-->
+      <!-- form inicio-->
 
- <form id="contactForm"> 
-                    <div class="container">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Seu nome*" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Seu email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Um endereço de email é obrigatório.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email invalido.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Telefone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">O telefone é obrigatório</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Sua Mensagem *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">É obrigatorio uma mensagem.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Sua mensagem foi enviada!</div>
-                            
-                            <br />
-                          
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar a mensagem</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
-                </form>
+      <form id="contactForm">
+        <div class="container">
+          <div class="col-md-6">
+            <div class="form-group">
+              <!-- Name input-->
+              <input class="form-control" id="name" type="text" placeholder="Seu nome*" data-sb-validations="required" />
+              <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
+            </div>
+            <div class="form-group">
+              <!-- Email address input-->
+              <input class="form-control" id="email" type="email" placeholder="Seu email *" data-sb-validations="required,email" />
+              <div class="invalid-feedback" data-sb-feedback="email:required">Um endereço de email é obrigatório.</div>
+              <div class="invalid-feedback" data-sb-feedback="email:email">Email invalido.</div>
+            </div>
+            <div class="form-group mb-md-0">
+              <!-- Phone number input-->
+              <input class="form-control" id="phone" type="tel" placeholder="Telefone *" data-sb-validations="required" />
+              <div class="invalid-feedback" data-sb-feedback="phone:required">O telefone é obrigatório</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group form-group-textarea mb-md-0">
+              <!-- Message input-->
+              <textarea class="form-control" id="message" placeholder="Sua Mensagem *" data-sb-validations="required"></textarea>
+              <div class="invalid-feedback" data-sb-feedback="message:required">É obrigatorio uma mensagem.</div>
+            </div>
+          </div>
+        </div>
+        <!-- Submit success message-->
+        <!---->
+        <!-- This is what your users will see when the form-->
+        <!-- has successfully submitted-->
+        <div class="d-none" id="submitSuccessMessage">
+          <div class="text-center text-white mb-3">
+            <div class="fw-bolder">Sua mensagem foi enviada!</div>
 
-                </section>
+            <br />
 
- <!-- form fim -->
+          </div>
+        </div>
+        <!-- Submit error message-->
+        <!---->
+        <!-- This is what your users will see when there is-->
+        <!-- an error submitting the form-->
+        <div class="d-none" id="submitErrorMessage">
+          <div class="text-center text-danger mb-3">Erro ao enviar a mensagem</div>
+        </div>
+        <!-- Submit Button-->
+        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
+      </form>
+
+    </section>
+
+    <!-- form fim -->
 
     <!-- Conteudo visível relevante vai dentro da main -->
 
