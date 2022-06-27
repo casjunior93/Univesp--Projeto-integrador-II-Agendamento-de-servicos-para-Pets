@@ -36,10 +36,9 @@
             v_obj.value = v_fun(v_obj.value)
         }
 
-        function mtel(v) {
+        function edita_cep(v) {
             v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
-            v = v.replace(/^([\d]{2})\.*([\d]{3})-*([\d]{3})/, "$1$2-$3"); //Coloca "()" em volta dos dois primeiros dígitos
-            /* v = v.replace(/(\d)(\d{4})$/, "$1-$2"); */ //Coloca hífen entre o quarto e o quinto dígitos
+            v = v.replace(/^([\d]{2})\.*([\d]{3})-*([\d]{3})/, "$1$2-$3");
             return v;
         }
 
@@ -50,7 +49,7 @@
         // aciona função ao digitar dados no campo
         window.onload = function() {
             id('inputAddressCep').onkeypress = function() {
-                mascara(this, mtel);
+                mascara(this, edita_cep);
             }
         }
     </script>

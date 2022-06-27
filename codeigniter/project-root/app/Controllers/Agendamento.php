@@ -43,14 +43,21 @@ class Agendamento extends BaseController
     ];
 
     $agenModel = new \App\Models\AgendamentoModel();
-    $query = $agenModel->insert($values);
-    if (!$query) {
-      return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
-    } else {
-      $id_agen = $agenModel->insertID();
+    $data_duplicada = $agenModel->verificaAgDuplicado($data, $hora, $minuto, $id_usuario);
 
-      //return redirect()->to('/dashboard');
-      return redirect()->to('clinicas')->with('success', 'Agendamento foi registrado com sucesso!');
+    if (empty($data_duplicada)) {
+
+      $query = $agenModel->insert($values);
+      if (!$query) {
+        return redirect()->back()->with('fail', 'Erro ao salvar no banco de dados');
+      } else {
+        $id_agen = $agenModel->insertID();
+
+        //return redirect()->to('/dashboard');
+        return redirect()->to('clinicas')->with('success', 'Agendamento foi registrado com sucesso!');
+      }
+    } else {
+      return redirect()->back()->with('fail', 'Data indisponível');
     }
   }
 

@@ -48,6 +48,7 @@ $routes->get('clinicas', 'Clinicas::listaClinicas');
 $routes->get('/email', 'EnviaEmail::index');
 $routes->post('/envia-emailteste', 'EnviaEmail::enviaEmailTeste');
 $routes->post('/salva-contato', 'Mensagens::salvar');
+$routes->post('agendamento/salvar', 'Agendamento::salvar');
 
 //Rotas protegidas por login
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
@@ -72,7 +73,6 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
     $routes->post('servicos/excluir', 'Servicos::excluirServico');
 
     //Agendamento
-    $routes->post('agendamento/salvar', 'Agendamento::salvar');
     $routes->post('agendamento/marcar-respondido', 'Agendamento::marcarRespondida');
     $routes->post('agendamento/excluir', 'Agendamento::excluirAg');
 });

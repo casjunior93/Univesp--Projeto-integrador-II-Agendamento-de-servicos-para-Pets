@@ -65,4 +65,12 @@ class AgendamentoModel extends Model
     $resultado = $db->query($sql);
     return $resultado;
   }
+
+  public function verificaAgDuplicado($data, $hora, $minuto, $id_usuario)
+  {
+    $db = db_connect();
+    $sql = 'SELECT * FROM agendamentos a WHERE a.id_usuario = ' . $id_usuario . ' AND a.data = "' . $data . '" AND a.hora = "' . $hora . '" AND a.minuto = ' . $minuto;
+    $resultado = $db->query($sql);
+    return $resultado;
+  }
 }
