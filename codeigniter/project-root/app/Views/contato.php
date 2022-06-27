@@ -56,7 +56,28 @@
       <h1>Entre em contato </h1>
     </section>
 
- <!-- Colocar html do form aqui -->
+ <!-- form inicio-->
+
+ <form>
+
+ <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Nome">
+    </div>
+  <div class="form-group">
+    <label for="email1">E-mail</label>
+    <input type="email" class="form-control" id="email1" placeholder="Seu melhor e-mail ">
+    
+  </div>
+  <div class="form-group">
+    <label for="textarea1">Sua mensagem</label>
+    <textarea class="form-control" id="textarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+ <!-- form fim -->
 
     <!-- Conteudo visível relevante vai dentro da main -->
 
