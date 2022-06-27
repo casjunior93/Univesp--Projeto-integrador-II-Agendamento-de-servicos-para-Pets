@@ -107,10 +107,10 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form class="" action="<?= base_url('animais/salvar'); ?>" method="POST">
+                                                    <form class="" action="<?= base_url('animais/salvar'); ?>" method="POST" enctype="multipart/form-data">
                                                         <?= csrf_field(); ?>
                                                         <div class="form-row">
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
                                                                 <label for="inputName">Nome do animal<span class="text-danger">*</span></label>
                                                                 <input type="text" id="nome" name="nome" class="form-control" value="<?= set_value('nome'); ?>" required>
                                                                 <?php
@@ -121,7 +121,7 @@
                                                                 }
                                                                 ?>
                                                             </div>
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
                                                                 <label for="inputName">Vacinas<span class="text-danger">*</span></label>
                                                                 <input type="text" id="vacinas" name="vacinas" class="form-control" value="<?= set_value('vacinas'); ?>" required>
                                                                 <?php
@@ -132,7 +132,7 @@
                                                                 }
                                                                 ?>
                                                             </div>
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
                                                                 <label for="sobre">Sobre<span class="text-danger">*</span></label>
                                                                 <input type="text" id="sobre" name="sobre" class="form-control" value="<?= set_value('vacinas'); ?>" required>
                                                                 <?php
@@ -143,7 +143,7 @@
                                                                 }
                                                                 ?>
                                                             </div>
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
                                                                 <label for="sobre">Idade<span class="text-danger">*</span></label>
                                                                 <input type="number" id="sobre" name="idade" class="form-control" value="<?= set_value('idade'); ?>" required>
                                                                 <?php
@@ -154,9 +154,10 @@
                                                                 }
                                                                 ?>
                                                             </div>
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
                                                                 <label for="img">Link da Foto<span class="text-danger">*</span></label>
-                                                                <input type="text" id="img" name="img" class="form-control" value="<?= set_value('img'); ?>" required>
+                                                                <?= form_open_multipart('upload/upload') ?>
+                                                                <input type="file" accept=".png, .jpg, .jpeg" id=" img" name="img" class="form-control" value="<?= set_value('img'); ?>" required>
                                                                 <?php
                                                                 if (isset($validation) && mostra_erro($validation, 'img') != '') {
                                                                     echo '<div class="alert alert-danger">';

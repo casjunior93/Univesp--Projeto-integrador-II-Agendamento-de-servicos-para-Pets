@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\Hash;
+use CodeIgniter\Files\File;
 
 class Animais extends BaseController
 {
@@ -67,15 +68,21 @@ class Animais extends BaseController
       $vacinas = $this->request->getPost('vacinas');
       $sobre = $this->request->getPost('sobre');
       $idade = $this->request->getPost('idade');
-      $img = $this->request->getPost('img');
+      $img = $this->request->getFile('img');
       $id_usuario = $id_usuario_logado;
+
+      //Img to pasta uploads
+      $newName = $img->getRandomName();
+      $move_img = $img->move(ROOTPATH . 'public/assets/uploads/', $newName);
+
+      $img_url = base_url() . '/assets/uploads/' . $newName;
 
       $values = [
         'nome' => $nome,
         'vacinas' => $vacinas,
         'sobre' => $sobre,
         'idade' => $idade,
-        'img' => $img,
+        'img' => $img_url,
         'id_usuario' => $id_usuario
       ];
 
