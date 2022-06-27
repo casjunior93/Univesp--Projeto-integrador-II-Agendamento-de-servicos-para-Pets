@@ -54,8 +54,7 @@
 
     <section class="conteudo">
       <h1>Entre em contato </h1>
-    </section>
-
+    
  <!-- form inicio-->
 
  <form>
@@ -75,6 +74,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+</section>
 
 
  <!-- form fim -->
