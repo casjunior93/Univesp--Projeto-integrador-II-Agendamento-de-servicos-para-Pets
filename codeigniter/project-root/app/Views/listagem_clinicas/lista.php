@@ -145,7 +145,7 @@
                 <?php foreach ($servicos as $servico) {
                   if ($servico['id_usuario'] == $usuario['id']) { ?>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<?= $servico['id']; ?>" id="tosa" name="servicos[]">
+                      <input class="form-check-input" type="checkbox" value="<?= $servico['id']; ?>" id="tosa" name="servicos[]" onclick="calculaTotalServicos(this)" data-valor="<?= $servico['valor']; ?>" data-usuario="<?= $usuario['id']; ?>">
                       <label class="form-check-label" for="tosa">
                         <?= $servico['nome']; ?> - R$<?= $servico['valor']; ?>
                       </label>
@@ -198,7 +198,7 @@
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <span class="valor-final badge bg-warning text-black" style="font-size: 30px;">R$200,00</span>
+              <span class="valor-final badge bg-warning text-black" style="font-size: 30px;" id="valor-f<?= $usuario['id']; ?>">R$0</span>
               <div class="botoes">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 <input type="hidden" name="id_usuario" value="<?= $usuario['id']; ?>">
@@ -235,6 +235,39 @@
   <script src="<?= base_url('/'); ?>/js/jquery-3.6.0.min.js"></script>
   <script src="<?= base_url('/'); ?>/bootstrap/bootstrap.js"></script>
   <script src="<?= base_url('/'); ?>/js/scripts.js"></script>
+  <script>
+    var id_usuario = 0;
+    var total = 0;
+
+    function calculaTotalServicos(el) {
+      id_u = el.getAttribute("data-usuario");
+      if (id_usuario == 0) {
+        id_usuario = id_u;
+        if (el.checked) {
+          total = total + parseFloat(el.getAttribute("data-valor"));
+        } else {
+          total = total - parseFloat(el.getAttribute("data-valor"));
+        }
+        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+      } else if (id_usuario == id_u) {
+        if (el.checked) {
+          total = total + parseFloat(el.getAttribute("data-valor"));
+        } else {
+          total = total - parseFloat(el.getAttribute("data-valor"));
+        }
+        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+      } else {
+        id_usuario = id_u;
+        total = 0;
+        if (el.checked) {
+          total = total + parseFloat(el.getAttribute("data-valor"));
+        } else {
+          total = total - parseFloat(el.getAttribute("data-valor"));
+        }
+        document.getElementById('valor-f' + id_u).innerHTML = 'R$' + parseFloat(total);
+      }
+    }
+  </script>
 
 </body>
 
