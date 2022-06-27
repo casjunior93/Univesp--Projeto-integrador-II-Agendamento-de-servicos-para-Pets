@@ -1,4 +1,4 @@
-        const UFselect = document.getElementById('inputState');
+        //const UFselect = document.getElementById('inputState');
 
 
         $(document).ready(function() {
