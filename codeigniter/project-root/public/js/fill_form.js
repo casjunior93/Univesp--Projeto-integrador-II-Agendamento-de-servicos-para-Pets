@@ -1,10 +1,13 @@
-        $(document).ready(function() {
+        const UFselect = document.getElementById('inputState');
+ 
+
+           $(document).ready(function() {
             function limpa_formulário_cep(){ 
                 // Limpa valores do formulário de cep.
                 $("#inputAddressRua").val("");
                 // $("#bairro").val("");
                 $("#inputCity").val("");
-                $("#inputState").val("");
+                //$("#inputState").val("");
                 //$("#ibge").val("");
             }
             
@@ -27,7 +30,8 @@
                         $("#inputAddressRua").val("...");
                         // $("#bairro").val("...");
                         $("#inputCity").val("...");
-                        $("#inputState").val("...");
+                        //$("#inputState").val("Escolha...");
+                        UFselect.value = "Escolha...";
                         //$("#ibge").val("...");
 
                         //Consulta o webservice viacep.com.br/
@@ -38,7 +42,8 @@
                                 $("#inputAddressRua").val(dados.logradouro);
                                 //$("#bairro").val(dados.bairro);
                                 $("#inputCity").val(dados.localidade);
-                                $("#inputState").val(dados.uf);
+                                //$("#inputState").val(dados.uf);
+                                UFselect.value = val(dados.uf);
                                 //$("#ibge").val(dados.ibge);
                             } //end if.
                             else {
