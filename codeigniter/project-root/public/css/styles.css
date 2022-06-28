@@ -3053,16 +3053,16 @@ fieldset:disabled .btn {
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #0b08a3;
-    border-color: #070233;
+    color: #fff !important;
+    background-color: #0b08a3 !important;
+    border-color: #070233!important;
 }
 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #fff;
-    background-color: #d9aa00;
-    border-color: #cca000;
+    background-color: #271f03 !important;
+    border-color: #cca000 !important;
     box-shadow: 0 0 0 0.25rem rgba(255, 208, 38, 0.5);
 }
 
