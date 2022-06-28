@@ -315,7 +315,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-warning"> Crie sua conta </a></button>
+                <a href="<?= base_url('entre-cadastre-se'); ?>" button type="button" class="btn btn-primary btn-xl text-uppercase"> Crie sua conta </a></button>
                 </div>
             </div>
         </div>
