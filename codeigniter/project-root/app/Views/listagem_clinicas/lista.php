@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="Agendamento de Serviços veterinários" />
   <meta name="author" content="" />
-  <title><?= $title; ?>  </title>
+  <title><?= $title; ?> </title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="<?= base_url('/'); ?>/assets/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
@@ -24,7 +24,7 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-    <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/logo.png" alt="Mascote Web" /></a>
+      <a class="navbar-brand" href="#page-top"><img src="<?= base_url('/'); ?>/assets/img/logo.png" alt="Mascote Web" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars ms-1"></i>
@@ -164,9 +164,9 @@
                   <div class="col-3 p-1">
                     <label for="data" class="form-label">Horas<span class="text-danger">*</span></label>
                     <select name="hora" class="form-control" id="hora">
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
                       <option value="10">10</option>
                       <option value="11">11</option>
                       <option value="12">12</option>
@@ -181,8 +181,8 @@
                   <div class="col-3 p-1">
                     <label for="data" class="form-label">Minutos<span class="text-danger">*</span></label>
                     <select name="minuto" class="form-control" id="minuto">
-                      <option value="30">30</option>
                       <option value="00">00</option>
+                      <option value="30">30</option>
                     </select>
                   </div>
                 </div>
@@ -216,24 +216,24 @@
   } ?>
   <!-- Aqui será renderizado os modais -->
 
-  
+
   <!--Footer-->
   <footer class="footer py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Mascote Web 2022</div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="https://www.univesp.br">UNIVESP - Universidade Virtual do Estado de SP </a><br></p> Projeto Integrador</p>
-                    <a class="link-dark text-decoration-none" href="#!"> Termos de uso</a>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start">Copyright &copy; Mascote Web 2022</div>
+        <div class="col-lg-4 my-3 my-lg-0">
+          <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
-    </footer>
+        <div class="col-lg-4 text-lg-end">
+          <a class="link-dark text-decoration-none me-3" href="https://www.univesp.br">UNIVESP - Universidade Virtual do Estado de SP </a><br></p> Projeto Integrador</p>
+          <a class="link-dark text-decoration-none" href="#!"> Termos de uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
   </footer>
 
   <!-- Scripts da pasta public -->

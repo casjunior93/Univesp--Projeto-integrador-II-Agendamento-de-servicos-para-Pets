@@ -45,7 +45,7 @@ class AgendamentoModel extends Model
   public function getAgendaPorIdUsuario($id)
   {
     $db = db_connect();
-    $sql = 'SELECT * FROM agendamentos WHERE id_usuario = ' . $id . ' ORDER BY data ASC';
+    $sql = 'SELECT * FROM agendamentos WHERE id_usuario = ' . $id . ' ORDER BY data, hora, minuto ASC';
     $resultado = $db->query($sql);
     return $resultado->getResultArray();
   }
