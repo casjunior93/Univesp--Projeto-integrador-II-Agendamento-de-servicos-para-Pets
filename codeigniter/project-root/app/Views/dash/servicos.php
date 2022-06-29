@@ -221,20 +221,20 @@
         <!-- Listagem animais -->
 
         <section class="listagem-section">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if ($qtde_servicos == 0) {
-                        echo '<h3>Nenhum serviço adicionado.</h3>';
-                    } else {
-                        foreach ($info_servicos as $servicos) { ?>
+            <?php
+            if ($qtde_servicos == 0) {
+                echo '<h3>Nenhum serviço adicionado.</h3>';
+            } else { ?>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome1</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($info_servicos as $servicos) { ?>
                             <tr>
                                 <td>
                                     <?= $servicos['nome']; ?>
@@ -250,9 +250,9 @@
                                 </td>
                             </tr>
                         <?php } ?>
-                </tbody>
-            </table>
-        <?php } ?>
+                    </tbody>
+                </table>
+            <?php } ?>
         </section>
 
         <!-- Fim da listagem animais -->
